@@ -1,0 +1,229 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.2.75",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                4,
+                5,
+                6
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "defaultMaterial"
+        },
+        {
+            "children" : [
+                0
+            ],
+            "name" : "g"
+        },
+        {
+            "children" : [
+                1
+            ],
+            "name" : "Collada visual scene group",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071068286895752
+            ]
+        },
+        {
+            "children" : [
+                2
+            ],
+            "name" : "RootNode (model correction matrix)"
+        },
+        {
+            "children" : [
+                3
+            ],
+            "name" : "RootNode (gltf orientation matrix)",
+            "rotation" : [
+                -0.7071067690849304,
+                0,
+                0,
+                0.7071067690849304
+            ],
+            "translation" : [
+                0,
+                0.9623212218284607,
+                0
+            ]
+        },
+        {
+            "name" : "Light",
+            "rotation" : [
+                0.16907575726509094,
+                0.7558803558349609,
+                -0.27217137813568115,
+                0.570947527885437
+            ],
+            "translation" : [
+                4.076245307922363,
+                5.903861999511719,
+                -1.0054539442062378
+            ]
+        },
+        {
+            "name" : "Camera",
+            "rotation" : [
+                0.483536034822464,
+                0.33687159419059753,
+                -0.20870360732078552,
+                0.7804827094078064
+            ],
+            "translation" : [
+                7.358891487121582,
+                4.958309173583984,
+                6.925790786743164
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "name" : "DefaultMaterial",
+            "normalTexture" : {
+                "index" : 0,
+                "texCoord" : 0
+            },
+            "occlusionTexture" : {
+                "index" : 1,
+                "texCoord" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 2,
+                    "texCoord" : 0
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 1,
+                    "texCoord" : 0
+                }
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "defaultMaterial",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "source" : 0
+        },
+        {
+            "source" : 1
+        },
+        {
+            "source" : 2
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "DefaultMaterial_normal",
+            "uri" : "textures/DefaultMaterial_normal.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "DefaultMaterial_metallicRoughness",
+            "uri" : "textures/DefaultMaterial_metallicRoughness.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "DefaultMaterial_baseColor",
+            "uri" : "textures/DefaultMaterial_baseColor.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 993,
+            "max" : [
+                1,
+                1,
+                0.9978410005569458
+            ],
+            "min" : [
+                -1,
+                -1,
+                -0.9978410005569458
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 993,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 993,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 4746,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 11916,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 11916,
+            "byteOffset" : 11916
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 7944,
+            "byteOffset" : 23832
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 9492,
+            "byteOffset" : 31776
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 41268,
+            "uri" : "bowling_ball.bin"
+        }
+    ]
+}

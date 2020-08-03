@@ -1,0 +1,32 @@
+{
+    "name":"wsjs_demo_fps",
+    "developer":true,
+    "startMap":"circuit_race",
+    "config":
+        {
+            "multiplayerMessageText":null,
+            "multiplayerMessageWaitTick":0,
+            "interfaceHitBitmap":null,
+            "touchStickSize":256,
+            "touchStickRingBitmap":"textures/stick_ring.png",
+            "touchStickThumbBitmap":"textures/stick_thumb.png",
+            "touchButtonSize":48,
+            "touchMenuPosition":[10,10],
+            "touchMenuBitmap":"textures/menu.png"
+        },
+    "interface":
+        {
+        },
+    "bot":
+        {
+        },
+    "entities":
+        [
+            "kart_bot","kart_player","pickup_bowling_ball","pickup_star",
+            "projectile_bowling_ball","weapon_bowling_ball"
+        ],
+    "effects":
+        [
+            "exhaust","explosion","spotlight","tire_smoke"
+        ]
+}

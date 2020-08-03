@@ -1,0 +1,9 @@
+Coding/Design: Brian Barnes
+Circuit Race Map (Original model): polroute66 / cgtrader (heavily modified by Brian Barnes)
+Factories (in Circuit Race): Daniel Mikulik / cgtrader
+Tree (in Circuit Race): Belina / cgtrader
+Retro Car: 3DRT.com @ sketchfab
+Bowling ball: Diversant-ka / sketchfab
+Misc Textures: textures.com
+Misc Sound Effects: freesound.org
+Sky Domes: hdrihaven.com
