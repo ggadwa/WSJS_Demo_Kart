@@ -14,13 +14,13 @@
         },
     "config":
         {
-            "hideTick":5000,
+            "hideTick":2000,
             "pickupOnce":false,
             "spinTick":5000,
             "floatMove":200,
-            "randomPosition":true,
-            "randomPositionAdd":{"x":0,"y":4000,"z":0},
-            "randomPositionOffset":{"x":12000,"y":0,"z":12000},
+            "randomPosition":false,
+            "randomPositionAdd":{"x":0,"y":0,"z":0},
+            "randomPositionOffset":{"x":0,"y":0,"z":0},
             "actions":
                 [
                     {"action":"addSpeed","count":1}

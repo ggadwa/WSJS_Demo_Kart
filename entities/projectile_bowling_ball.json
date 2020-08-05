@@ -15,7 +15,7 @@
     "config":
         {
             "lifeTick":8000,
-            "speed":2200,
+            "speed":2500,
             "damage":0,
             "floats":false,
             "followsFloor":true,
@@ -30,7 +30,7 @@
             "canReflect":true,
             "hitEffect":"explosion",
             "trailEffect":"exhaust",
-            "trailSpawnTick":30
+            "trailSpawnTick":20
         },
     "sounds":
         {

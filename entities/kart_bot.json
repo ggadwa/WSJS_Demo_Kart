@@ -8,7 +8,7 @@
             "scale":{"x":5000,"y":5000,"z":5000},
             "radius":5000,
             "height":5000,
-            "eyeOffset":3000,
+            "eyeOffset":4800,
             "weight":500,
             "hideMeshes":[]
         },
@@ -28,7 +28,8 @@
             "bounceWaitCount":20,
             "spinOutSpeed":6,
             "driftDecelerationFactor":0.99,
-            "targetScanYRange":15,
+            "targetScanYRange":80,
+            "targetScanDistance":30000,
             "maxSpeedItemCount":10,
             "speedItemIncrease":50,
             "rigidBodyMaxDrop":3000,
