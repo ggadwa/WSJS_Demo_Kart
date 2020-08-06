@@ -31,7 +31,7 @@
             "thirdPersonCameraDistance":30000,
             "thirdPersonCameraLookAngle":{"x":-20,"y":180,"z":0},
             "maxSpeedItemCount":10,
-            "speedItemIncrease":50,
+            "speedItemIncrease":10,
             "interfaceSpeedItem":"stars",
             "rigidBodyMaxDrop":3000,
             "rigidBodyMaxAngle":25,

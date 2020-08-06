@@ -13,10 +13,10 @@
         },
     "sounds":
         {
-            "start":{"name":"explosion","rate":1.0,"randomRateAdd":-0.4,"distance":50000,"loopStart":0,"loopEnd":0,"loop":false}
+            "start":{"name":"explosion","rate":1.0,"randomRateAdd":-0.4,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false}
         },
     "shake":{"lifeTick":2000,"distance":30000,"maxShift":40},
-    "damage":{"damage":50,"distance":20000},
+    "damage":{"damage":1,"distance":25000},
     "particles":
         [
             {
