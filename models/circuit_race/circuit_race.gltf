@@ -10857,7 +10857,7 @@
         },
         {
             "mesh" : 484,
-            "name" : "kart_bot_1.001",
+            "name" : "kart_bot_3",
             "rotation" : [
                 0,
                 0.7071067690849304,
@@ -10877,7 +10877,7 @@
         },
         {
             "mesh" : 485,
-            "name" : "kart_bot_1.002",
+            "name" : "kart_bot_4",
             "rotation" : [
                 0,
                 0.7071067690849304,
@@ -18647,7 +18647,7 @@
             "extras" : {
                 "wsjsEntity" : "{\"entity\":\"kart_bot\",\"data\":{}}"
             },
-            "name" : "kart_bot_1.001",
+            "name" : "kart_bot_3",
             "primitives" : [
                 {
                     "attributes" : {

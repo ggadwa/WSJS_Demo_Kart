@@ -43,8 +43,8 @@
             "smokeThickness":2,
             "smokeAngles":[135,225],
             "smokeEffect":"tire_smoke",
-            "pathNodeSlop":5000,
-            "driftMinAngle":10
+            "pathNodeSlop":8000,
+            "driftMinAngle":60
         },
     "animations":
         {

@@ -1,5 +1,5 @@
 {
-    "name":"wsjs_demo_fps",
+    "name":"wsjs_demo_kart",
     "developer":true,
     "startMap":"circuit_race",
     "config":
@@ -7,6 +7,9 @@
             "multiplayerMessageText":null,
             "multiplayerMessageWaitTick":0,
             "interfaceHitBitmap":null,
+            "sequenceStart":"ready_set_go",
+            "sequenceWin":"win",
+            "sequenceLoss":"lose",
             "touchStickSize":256,
             "touchStickRingBitmap":"textures/stick_ring.png",
             "touchStickThumbBitmap":"textures/stick_thumb.png",
@@ -28,5 +31,9 @@
     "effects":
         [
             "exhaust","explosion","spotlight","tire_smoke"
+        ],
+    "sequences":
+        [
+            "ready_set_go","win"
         ]
 }
