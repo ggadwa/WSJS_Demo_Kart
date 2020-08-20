@@ -44,7 +44,8 @@
             "smokeAngles":[135,225],
             "smokeEffect":"tire_smoke",
             "pathNodeSlop":8000,
-            "driftMinAngle":60
+            "driftMinAngle":60,
+            "brakeMinAngle":90
         },
     "animations":
         {
@@ -56,10 +57,10 @@
         },
     "sounds":
         {
-            "engineSound":{"name":"engine","rate":0.5,"randomRateAdd":0,"distance":1000,"loopStart":0,"loopEnd":3.0,"loop":true},
-            "skidSound":{"name":"skid","rate":1.0,"randomRateAdd":0,"distance":25000,"loopStart":0,"loopEnd":0,"loop":false},
-            "crashKartSound":{"name":"crash","rate":1.0,"randomRateAdd":0.2,"distance":10000,"loopStart":0,"loopEnd":0,"loop":false},
-            "crashWallSound":{"name":"crash","rate":0.8,"randomRateAdd":0.2,"distance":10000,"loopStart":0,"loopEnd":0,"loop":false}
+            "engineSound":{"name":"engine","rate":0.5,"randomRateAdd":0,"distance":80000,"loopStart":0,"loopEnd":3.0,"loop":true},
+            "skidSound":{"name":"skid","rate":1.0,"randomRateAdd":0,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false},
+            "crashKartSound":{"name":"crash","rate":1.0,"randomRateAdd":0.2,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false},
+            "crashWallSound":{"name":"crash","rate":0.8,"randomRateAdd":0.2,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false}
         },
     "weapons":
         [

@@ -1,32 +1,34 @@
 {
     "lifeTick":5000,
+    "freezePlayer":[0,4000],
+    "freezeAI":[0,4000],
     "bitmaps":
         [
             {
-                "bitmap":"textures/bowling_ball.png",
+                "bitmap":"textures/ready.png",
                 "positionMode":"middle",
                 "drawMode":"transparent",
                 "frames":
                     [
-                        {"tick":0,"positionOffset":{"x":-50,"y":-25},"width":100,"height":50,"rotate":0,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
+                        {"tick":0,"positionOffset":{"x":-50,"y":-25},"width":100,"height":50,"rotate":5,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
                         {"tick":1000,"positionOffset":{"x":-500,"y":-250},"width":1000,"height":500,"rotate":0,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
-                        {"tick":1200,"positionOffset":{"x":-350,"y":-175},"width":700,"height":350,"rotate":5,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
+                        {"tick":1200,"positionOffset":{"x":-350,"y":-175},"width":700,"height":350,"rotate":-2,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
                         {"tick":1400,"positionOffset":{"x":-500,"y":-250},"width":1000,"height":500,"rotate":0,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
-                        {"tick":1500,"positionOffset":{"x":-450,"y":-225},"width":900,"height":450,"rotate":-2,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
+                        {"tick":1500,"positionOffset":{"x":-450,"y":-225},"width":900,"height":450,"rotate":2,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
                         {"tick":1600,"positionOffset":{"x":-500,"y":-250},"width":1000,"height":500,"rotate":0,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
                         {"tick":2000,"positionOffset":{"x":-500,"y":-250},"width":1000,"height":500,"rotate":0,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
                         {"tick":2200,"positionOffset":{"x":-500,"y":-250},"width":1000,"height":500,"rotate":0,"color":{"r":1,"g":1,"b":1},"alpha":0.0}
                     ]
             },
             {
-                "bitmap":"textures/lap_background.png",
+                "bitmap":"textures/set.png",
                 "positionMode":"middle",
                 "drawMode":"transparent",
                 "frames":
                     [
-                        {"tick":2000,"positionOffset":{"x":-50,"y":-25},"width":100,"height":50,"rotate":0,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
+                        {"tick":2000,"positionOffset":{"x":-50,"y":-25},"width":100,"height":50,"rotate":-5,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
                         {"tick":3000,"positionOffset":{"x":-500,"y":-250},"width":1000,"height":500,"rotate":0,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
-                        {"tick":3200,"positionOffset":{"x":-350,"y":-175},"width":700,"height":350,"rotate":5,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
+                        {"tick":3200,"positionOffset":{"x":-350,"y":-175},"width":700,"height":350,"rotate":2,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
                         {"tick":3400,"positionOffset":{"x":-500,"y":-250},"width":1000,"height":500,"rotate":0,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
                         {"tick":3500,"positionOffset":{"x":-450,"y":-225},"width":900,"height":450,"rotate":-2,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
                         {"tick":3600,"positionOffset":{"x":-500,"y":-250},"width":1000,"height":500,"rotate":0,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
@@ -35,7 +37,7 @@
                     ]
             },
             {
-                "bitmap":"textures/star.png",
+                "bitmap":"textures/go.png",
                 "positionMode":"middle",
                 "drawMode":"transparent",
                 "frames":
@@ -47,8 +49,8 @@
         ],
     "sounds":
         [
-            {"tick":0,"name":"pickup","rate":1.0,"randomRateAdd":0,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false},
-            {"tick":2000,"name":"pickup","rate":1.3,"randomRateAdd":0,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false},
-            {"tick":4000,"name":"pickup","rate":1.6,"randomRateAdd":0,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false}
+            {"tick":0,"name":"start_tone","rate":1.0,"randomRateAdd":0,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false},
+            {"tick":2000,"name":"start_tone","rate":1.1,"randomRateAdd":0,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false},
+            {"tick":4000,"name":"start_tone","rate":1.2,"randomRateAdd":0,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false}
         ]
 }

@@ -28,6 +28,8 @@
             "canBounce":false,
             "bounceFactor":0,
             "canReflect":true,
+            "trackList":["kart_player","kart_bot"],
+            "trackSpeed":2,
             "hitEffect":"explosion",
             "trailEffect":"exhaust",
             "trailSpawnTick":20
