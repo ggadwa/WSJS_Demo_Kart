@@ -18,7 +18,7 @@
             "driftMaxTurnSpeed":2.5,
             "forwardAcceleration":8,
             "forwardDeceleration":25,
-            "forwardMaxSpeed":1500,
+            "forwardMaxSpeed":500,
             "reverseAcceleration":5,
             "reverseDeceleration":35,
             "reverseMaxSpeed":1000,
@@ -45,7 +45,8 @@
             "smokeEffect":"tire_smoke",
             "pathNodeSlop":8000,
             "driftMinAngle":60,
-            "brakeMinAngle":90
+            "brakeMinAngle":90,
+            "turnCoolDownPeriod":15
         },
     "animations":
         {

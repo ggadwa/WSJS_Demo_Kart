@@ -36,6 +36,7 @@
             "rigidBodyMaxDrop":3000,
             "rigidBodyMaxAngle":25,
             "rigidBodyTransformPerTick":0.025,
+            "turnCoolDownPeriod":15,
             "engineSoundRateMin":0.5,
             "engineSoundRateAdd":0.8,
             "engineSoundRateAirIncrease":0.2,
