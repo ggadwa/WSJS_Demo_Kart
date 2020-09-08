@@ -25,7 +25,7 @@
         },
     "entities":
         [
-            "kart_bot","kart_player","pickup_bowling_ball","pickup_star",
+            "kart_bot","kart_player","pickup_bowling_ball","pickup_star","pickup_burst",
             "projectile_bowling_ball","weapon_bowling_ball"
         ],
     "effects":

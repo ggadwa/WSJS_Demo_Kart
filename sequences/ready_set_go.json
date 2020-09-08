@@ -50,7 +50,7 @@
     "sounds":
         [
             {"tick":0,"name":"start_tone","rate":1.0,"randomRateAdd":0,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false},
-            {"tick":2000,"name":"start_tone","rate":1.1,"randomRateAdd":0,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false},
-            {"tick":4000,"name":"start_tone","rate":1.2,"randomRateAdd":0,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false}
+            {"tick":2000,"name":"start_tone","rate":1.05,"randomRateAdd":0,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false},
+            {"tick":4000,"name":"start_tone","rate":1.1,"randomRateAdd":0,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false}
         ]
 }

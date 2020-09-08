@@ -14,11 +14,11 @@
         },
     "config":
         {
-            "maxTurnSpeed":1.5,
+            "maxTurnSpeed":"@turnSpeed",
             "driftMaxTurnSpeed":2.5,
             "forwardAcceleration":8,
             "forwardDeceleration":25,
-            "forwardMaxSpeed":500,
+            "forwardMaxSpeed":"@speed",
             "reverseAcceleration":5,
             "reverseDeceleration":35,
             "reverseMaxSpeed":1000,
@@ -43,6 +43,9 @@
             "smokeThickness":2,
             "smokeAngles":[135,225],
             "smokeEffect":"tire_smoke",
+            "burstThickness":1,
+            "burstAngles":[135,225],
+            "burstEffect":"exhaust",
             "pathNodeSlop":8000,
             "driftMinAngle":60,
             "brakeMinAngle":90,
@@ -59,7 +62,8 @@
     "sounds":
         {
             "engineSound":{"name":"engine","rate":0.5,"randomRateAdd":0,"distance":80000,"loopStart":0,"loopEnd":3.0,"loop":true},
-            "skidSound":{"name":"skid","rate":1.0,"randomRateAdd":0,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false},
+            "skidSound":{"name":"skid","rate":1.0,"randomRateAdd":0,"distance":80000,"loopStart":0,"loopEnd":0,"loop":false},
+            "burstSound":{"name":"burst","rate":1.0,"randomRateAdd":0,"distance":50000,"loopStart":0,"loopEnd":0,"loop":false},
             "crashKartSound":{"name":"crash","rate":1.0,"randomRateAdd":0.2,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false},
             "crashWallSound":{"name":"crash","rate":0.8,"randomRateAdd":0.2,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false}
         },
