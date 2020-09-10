@@ -23,7 +23,7 @@
             "randomPositionOffset":{"x":20000,"y":0,"z":20000},
             "actions":
                 [
-                    {"action":"addBurst","speed":50,"lifeTick":1500}
+                    {"action":"addBurst","speed":75,"lifeTick":1500}
                 ]
         },
     "animations":
