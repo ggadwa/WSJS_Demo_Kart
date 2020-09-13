@@ -12,6 +12,14 @@
             "weight":500,
             "hideMeshes":[]
         },
+    "physics":
+        {
+            "maxBumpCount":2,
+            "floorRiseHeight":4000,
+            "collisionSpokeCount":48,
+            "collisionHeightSegmentCount":4,
+            "collisionHeightMargin":10
+        },
     "config":
         {
             "maxTurnSpeed":"@turnSpeed",
