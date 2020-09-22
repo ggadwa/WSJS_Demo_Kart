@@ -8,8 +8,8 @@
             "multiplayerMessageWaitTick":0,
             "interfaceHitBitmap":null,
             "sequenceStart":"ready_set_go",
-            "sequenceWin":"win",
-            "sequenceLoss":"lose",
+            "sequenceWon":"won",
+            "sequenceLost":"lost",
             "touchStickSize":256,
             "touchStickRingBitmap":"textures/stick_ring.png",
             "touchStickThumbBitmap":"textures/stick_thumb.png",
@@ -34,6 +34,6 @@
         ],
     "sequences":
         [
-            "ready_set_go","win"
+            "ready_set_go","won","lost"
         ]
 }

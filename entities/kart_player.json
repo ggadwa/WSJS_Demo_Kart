@@ -53,7 +53,8 @@
             "smokeEffect":"tire_smoke",
             "burstThickness":1,
             "burstAngles":[135,225],
-            "burstEffect":"exhaust"
+            "burstEffect":"exhaust",
+            "lapCount":4
         },
     "animations":
         {
