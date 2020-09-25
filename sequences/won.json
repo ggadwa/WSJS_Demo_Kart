@@ -3,5 +3,24 @@
     "freezePlayer":[0,5000],
     "freezeAI":[0,5000],
     "hideUI":false,
-    "exitLevel":true
+    "exitLevel":true,
+    "bitmaps":
+        [
+            {
+                "bitmap":"textures/won.png",
+                "positionMode":"middle",
+                "drawMode":"transparent",
+                "frames":
+                    [
+                        {"tick":0,"positionOffset":{"x":-50,"y":-25},"width":100,"height":50,"rotate":5,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
+                        {"tick":1000,"positionOffset":{"x":-500,"y":-250},"width":1000,"height":500,"rotate":0,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
+                        {"tick":1200,"positionOffset":{"x":-350,"y":-175},"width":700,"height":350,"rotate":-2,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
+                        {"tick":1400,"positionOffset":{"x":-500,"y":-250},"width":1000,"height":500,"rotate":0,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
+                        {"tick":1500,"positionOffset":{"x":-450,"y":-225},"width":900,"height":450,"rotate":2,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
+                        {"tick":1600,"positionOffset":{"x":-500,"y":-250},"width":1000,"height":500,"rotate":0,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
+                        {"tick":2000,"positionOffset":{"x":-500,"y":-250},"width":1000,"height":500,"rotate":0,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
+                        {"tick":5000,"positionOffset":{"x":-500,"y":-250},"width":1000,"height":500,"rotate":0,"color":{"r":1,"g":1,"b":1},"alpha":1.0}
+                    ]
+            }
+        ]
 }

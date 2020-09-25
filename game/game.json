@@ -2,6 +2,10 @@
     "name":"wsjs_demo_kart",
     "developer":true,
     "startMap":"circuit_race",
+    "title":
+        {
+            "background":"textures/title.png"
+        },
     "config":
         {
             "multiplayerMessageText":null,

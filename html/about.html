@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>WSJS Kart Demonstration</title>
+<link rel="stylesheet" type="text/css" href="demo.css">
+<link rel="stylesheet" type="text/css" href="../../code/html/common.css">
+
+<!-- the script -->
+
+<script type="module">
+    import main from '../../code/main/main.js';
+    
+    window.main=main;
+</script>
+
+<script>
+function run()
+{
+    window.main.run(false,{});
+}
+</script>
+
+</head>
+
+<body>
+
+<!-- start -->
+
+<div class="header">WSJS Kart Demonstration</div>
+
+<div class="line"></div>
+
+<div class="imageWrapper">
+    <img class="imageClick" src="kart.png" onClick="run()" alt="Click to Play">
+</div>
+
+<!-- controls -->
+
+<div class="header">Controls</div>
+
+<div class="line"></div>
+    
+<div class="keyTableWrapper">
+    <table class="keyTable">
+        <tr class="keyRow">
+            <td class="keyColumnLeft">Esc</td>
+            <td class="keyColumnRight">Pause</td>
+            <td class="keyColumnLeft">Touch Lower Left</td>
+            <td class="keyColumnRight">Turn</td>
+        </tr>
+        <tr class="keyRow">
+            <td class="keyColumnLeft">Mouse</td>
+            <td class="keyColumnRight">Turn</td>
+            <td class="keyColumnLeft">Touch Lower Right</td>
+            <td class="keyColumnRight">Forward/Brake/Click to Fire</td>
+        </tr>
+        <tr class="keyRow">
+            <td class="keyColumnLeft">W</td>
+            <td class="keyColumnRight">Forward</td>
+            <td class="keyColumnLeft">S</td>
+            <td class="keyColumnRight">Break</td>
+        </tr>
+        <tr class="keyRow">
+            <td class="keyColumnLeft">Space</td>
+            <td class="keyColumnRight">Jump</td>
+            <td class="keyColumnLeft">A/D</td>
+            <td class="keyColumnRight">Drift</td>
+        </tr>
+        <tr class="keyRow">
+            <td class="keyColumnLeft">Mouse Button</td>
+            <td class="keyColumnRight">Fire</td>
+            <td class="keyColumnLeft">F9</td>
+            <td class="keyColumnRight">Developer Mode</td>
+        </tr>
+    </table>
+</div>
+
+<div class="line"></div>
+
+<!-- links -->
+
+<div class="header">Links</div>
+
+<div class="line">
+    <a href="../../demo/html/index.html">FPS Demonstration</a><br>
+    <a href="../../demo_platformer/html/index.html">Platformer Demonstration</a><br>
+    <a href="https://github.com/ggadwa/WSJS">GitHub Engine Source Code</a><br>
+    <a href="https://github.com/ggadwa/WSJS_Demo_Kart">GitHub Kart Demo Source Code</a><br>
+    <a href="https://twitter.com/ggadwa">@ggadwa</a><br>
+    <div>Check credits.txt in the demo source code for credits</div>
+</div>
+
+</body>
+</html>
