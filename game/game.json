@@ -4,7 +4,6 @@
     "startMap":"circuit_race",
     "title":
         {
-            "background":"textures/title.png"
         },
     "config":
         {
