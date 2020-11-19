@@ -55,12 +55,5 @@
         {
             "idleAnimation":[0,0]
 
-        },
-    "interface":
-        {
-            "counts":
-                [
-                    {"id":"bowling_balls","bitmap":"textures/bowling_ball.png","count":3,"width":32,"height":32,"positionMode":"topLeft","positionOffset":{"x":130,"y":40},"addOffset":{"x":32,"y":0},"onColor":{"r":1,"g":1,"b":1},"onAlpha":1,"offColor":{"r":1,"g":1,"b":1},"offAlpha":0,"show":true}
-                ]
         }
 }
