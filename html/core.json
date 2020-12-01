@@ -5,6 +5,7 @@
     "multiplayerMaps":null,
     "title":
         {
+            "clickSound":"click",
             "playButton":{"title":"Play","x":0.75,"y":0.77,"width":0.24,"height":0.1},
             "multiplayerButton":{"title":"Multiplayer","x":0,"y":0,"width":0,"height":0,"show":false},
             "setupButton":{"title":"Setup","x":0.75,"y":0.88,"width":0.24,"height":0.1,"show":true}
@@ -13,9 +14,18 @@
         {
             "multiplayerMessageText":null,
             "multiplayerMessageWaitTick":0,
-            "sequenceStart":"ready_set_go",
-            "sequenceWon":"won",
-            "sequenceLost":"lost",
+            "startActions":
+                [
+                    {"action":"sequence","name":"ready_set_go"}
+                ],
+            "wonActions":
+                [
+                    {"action":"sequence","name":"won"}
+                ],
+            "lostActions":
+                [
+                    {"action":"sequence","name":"lost"}
+                ],
             "touchStickSize":256,
             "touchButtonSize":48,
             "touchMenuPosition":[10,10]

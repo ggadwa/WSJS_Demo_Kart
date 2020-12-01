@@ -3,7 +3,8 @@
     "freezePlayer":[0,4000],
     "freezeAI":[0,4000],
     "hideUI":[0,4000],
-    "exitLevel":false,
+    "switchMap":null,
+    "exitGame":false,
     "bitmaps":
         [
             {
