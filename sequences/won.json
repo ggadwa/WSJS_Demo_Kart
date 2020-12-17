@@ -1,8 +1,9 @@
 {
-    "lifeTick":5000,
-    "freezePlayer":[0,5000],
-    "freezeAI":[0,5000],
+    "lifeTick":7500,
+    "freezePlayer":null,
+    "freezeAI":null,
     "hideUI":false,
+    "music":{"name":"won","autoStop":true},
     "switchMap":null,
     "exitGame":true,
     "bitmaps":
@@ -20,7 +21,7 @@
                         {"tick":1500,"positionOffset":{"x":-450,"y":-225},"width":900,"height":450,"rotate":2,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
                         {"tick":1600,"positionOffset":{"x":-500,"y":-250},"width":1000,"height":500,"rotate":0,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
                         {"tick":2000,"positionOffset":{"x":-500,"y":-250},"width":1000,"height":500,"rotate":0,"color":{"r":1,"g":1,"b":1},"alpha":1.0},
-                        {"tick":5000,"positionOffset":{"x":-500,"y":-250},"width":1000,"height":500,"rotate":0,"color":{"r":1,"g":1,"b":1},"alpha":1.0}
+                        {"tick":7500,"positionOffset":{"x":-500,"y":-250},"width":1000,"height":500,"rotate":0,"color":{"r":1,"g":1,"b":1},"alpha":1.0}
                     ]
             }
         ]

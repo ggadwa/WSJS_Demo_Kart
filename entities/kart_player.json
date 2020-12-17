@@ -54,6 +54,9 @@
             "burstThickness":1,
             "burstAngles":[135,225],
             "burstEffect":"exhaust",
+            "pathNodeSlop":8000,
+            "driftMinAngle":60,
+            "brakeMinAngle":90,
             "lapCount":4
         },
     "animations":
