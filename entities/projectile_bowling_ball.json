@@ -36,6 +36,8 @@
             "canBounce":false,
             "bounceFactor":0,
             "canReflect":true,
+            "reflectFactor":0.95,
+            "canBeClimbed":true,
             "trackList":["kart_player","kart_bot"],
             "trackMaxAngle":60,
             "trackSpeed":50,

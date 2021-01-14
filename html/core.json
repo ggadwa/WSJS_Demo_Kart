@@ -1,5 +1,4 @@
 {
-    "name":"wsjs_demo_kart",
     "developer":true,
     "startMap":"circuit_race",
     "multiplayerMaps":null,
@@ -7,7 +6,7 @@
         {
             "font":"Arial",
             "clickSound":"click",
-            "menu":{"textSize":80,"highlightTextSize":85,"color":{"r":1,"g":1,"b":0},"highlightColor":{"r":1,"g":0.5,"b":0}},
+            "menu":{"textSize":80,"highlightTextSize":85,"color":{"r":0,"g":1,"b":0},"highlightColor":{"r":1,"g":1,"b":0},"alignX":"middle","alignY":"middle"},
             "playButton":{"title":"Race","show":true},
             "multiplayerButton":{"title":"","show":false},
             "setupButton":{"title":"Setup","show":true},
