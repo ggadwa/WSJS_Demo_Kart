@@ -41,7 +41,7 @@
             "trackList":["kart_player","kart_bot"],
             "trackMaxAngle":60,
             "trackSpeed":50,
-            "hitEffect":"explosion",
+            "hitEffect":"blue_ball",
             "trailEffect":"exhaust",
             "trailSpawnTick":20
         },

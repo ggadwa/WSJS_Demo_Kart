@@ -6,7 +6,7 @@
         {
             "font":"Arial",
             "clickSound":"click",
-            "menu":{"textSize":80,"highlightTextSize":85,"color":{"r":0,"g":1,"b":0},"highlightColor":{"r":1,"g":1,"b":0},"alignX":"middle","alignY":"middle"},
+            "menu":{"textSize":80,"highlightTextSize":82,"color":{"r":0,"g":1,"b":0},"highlightColor":{"r":1,"g":1,"b":0},"alignX":"middle","alignY":"middle"},
             "playButton":{"title":"Race","show":true},
             "multiplayerButton":{"title":"","show":false},
             "setupButton":{"title":"Setup","show":true},
@@ -65,7 +65,7 @@
         ],
     "effects":
         [
-            "exhaust","explosion","spotlight","tire_smoke"
+            "exhaust","blue_ball","spotlight","tire_smoke"
         ],
     "sequences":
         [
