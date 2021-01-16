@@ -31,8 +31,8 @@
             "primary":
                 {
                     "type":"projectile",
-                    "ammoInitialCount":30,
-                    "ammoMaxCount":30,
+                    "ammoInitialCount":0,
+                    "ammoMaxCount":3,
                     "ammoRegenerateTick":-1,
                     "waitTick":1000,
                     "damage":0,

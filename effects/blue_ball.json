@@ -34,7 +34,7 @@
                     [
                         {"tick":0,"spread":0.1,"width":10,"height":10,"rotate":0,"color":{"r":0.1,"g":0,"b":1},"alpha":0.1},
                         {"tick":300,"spread":1.0,"width":8000,"height":8000,"rotate":180,"color":{"r":0.3,"g":0,"b":1},"alpha":0.4},
-                        {"tick":1500,"spread":0.3,"width":1000,"height":1000,"rotate":270,"color":{"r":0.5,"g":0,"b":1},"alpha":0.0}
+                        {"tick":1500,"spread":0.1,"width":1000,"height":1000,"rotate":270,"color":{"r":0.5,"g":0,"b":1},"alpha":0.0}
                     ]
             }
         ],
