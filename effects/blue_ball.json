@@ -16,7 +16,7 @@
             "start":{"name":"explosion","rate":1.0,"randomRateAdd":-0.4,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false}
         },
     "shake":{"lifeTick":2000,"distance":100000,"maxShift":40},
-    "damage":{"damage":1,"distance":50000},
+    "damage":{"damage":1,"distance":60000},
     "particles":
         [
             {

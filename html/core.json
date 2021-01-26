@@ -58,8 +58,8 @@
                 ]
         },
     "characters":
-        {
-        },
+        [
+        ],
     "entities":
         [
             "kart_bot","kart_player","pickup_bowling_ball","pickup_star","pickup_burst",
