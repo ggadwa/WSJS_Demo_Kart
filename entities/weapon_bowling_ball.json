@@ -34,7 +34,7 @@
                     "ammoInitialCount":0,
                     "ammoMaxCount":3,
                     "ammoRegenerateTick":-1,
-                    "clipSize":-1,
+                    "ammoClipSize":-1,
                     "waitTick":1000,
                     "damage":0,
                     "distance":0,
@@ -59,5 +59,9 @@
             "raiseAnimation":null,
             "lowerAnimation":null,
             "reloadAnimation":null
+        },
+    "sounds":
+        {
+            "reloadSound":null
         }
 }
