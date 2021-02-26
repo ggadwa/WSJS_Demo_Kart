@@ -1,6 +1,7 @@
 {
     "developer":true,
     "startMap":"circuit_race",
+    "multiplayerGames":null,
     "multiplayerMaps":null,
     "title":
         {
