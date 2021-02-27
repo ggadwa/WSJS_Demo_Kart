@@ -63,13 +63,28 @@
             "brakeMinAngle":90,
             "lapCount":4
         },
+    "weapons":
+        [
+            {
+                "weaponJson":"weapon_bowling_ball",
+                "weaponData":null,
+                "name":"weapon_bowling_ball",
+                "parentIdleAnimation":{"startFrame":0,"endFrame":0},
+                "parentRunAnimation":{"startFrame":0,"endFrame":0},
+                "parentFireIdleAnimation":{"startFrame":0,"endFrame":0},
+                "parentPrimaryFireRunAnimation":{"startFrame":0,"endFrame":0},
+                "parentSecondaryFireRunAnimation":{"startFrame":0,"endFrame":0},
+                "parentTertiaryFireRunAnimation":{"startFrame":0,"endFrame":0},
+                "meshes":[]
+            }
+        ],
     "animations":
         {
-            "idleAnimation":[175,275],
-            "driveAnimation":[380,400],
-            "turnLeftAnimation":[405,425],
-            "turnRightAnimation":[435,455],
-            "spinOutAnimation":[275,375]
+            "idleAnimation":{"startFrame":175,"endFrame":275},
+            "driveAnimation":{"startFrame":380,"endFrame":400},
+            "turnLeftAnimation":{"startFrame":405,"endFrame":425},
+            "turnRightAnimation":{"startFrame":435,"endFrame":455},
+            "spinOutAnimation":{"startFrame":275,"endFrame":375}
         },
     "sounds":
         {
@@ -78,20 +93,5 @@
             "burstSound":{"name":"burst","rate":1.0,"randomRateAdd":0,"distance":50000,"loopStart":0,"loopEnd":0,"loop":false},
             "crashKartSound":{"name":"crash","rate":1.0,"randomRateAdd":0.2,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false},
             "crashWallSound":{"name":"crash","rate":0.8,"randomRateAdd":0.2,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false}
-        },
-    "weapons":
-        [
-            {
-                "weaponJson":"weapon_bowling_ball",
-                "weaponData":null,
-                "name":"weapon_bowling_ball",
-                "parentIdleAnimation":[0,0],
-                "parentRunAnimation":[0,0],
-                "parentFireIdleAnimation":[0,0],
-                "parentPrimaryFireRunAnimation":[0,0],
-                "parentSecondaryFireRunAnimation":[0,0],
-                "parentTertiaryFireRunAnimation":[0,0],
-                "meshes":[]
-            }
-        ]
+        }
 }

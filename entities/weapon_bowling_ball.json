@@ -40,7 +40,7 @@
                     "distance":0,
                     "hitEffect":null,
                     "projectileJson":"projectile_bowling_ball",
-                    "animation":[0,0],
+                    "animation":{"startFrame":0,"endFrame":0},
                     "interfaceAmmoIcon":null,
                     "interfaceAmmoText":null,
                     "interfaceAmmoCount":"bowling_balls",
