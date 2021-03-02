@@ -65,22 +65,62 @@
                 "weaponJson":"weapon_bowling_ball",
                 "weaponData":null,
                 "name":"weapon_bowling_ball",
-                "parentIdleAnimation":{"startFrame":0,"endFrame":0},
-                "parentRunAnimation":{"startFrame":0,"endFrame":0},
-                "parentFireIdleAnimation":{"startFrame":0,"endFrame":0},
-                "parentPrimaryFireRunAnimation":{"startFrame":0,"endFrame":0},
-                "parentSecondaryFireRunAnimation":{"startFrame":0,"endFrame":0},
-                "parentTertiaryFireRunAnimation":{"startFrame":0,"endFrame":0},
+                "parentIdleAnimation":null,
+                "parentRunAnimation":null,
+                "parentFireIdleAnimation":null,
+                "parentPrimaryFireRunAnimation":null,
+                "parentSecondaryFireRunAnimation":null,
+                "parentTertiaryFireRunAnimation":null,
                 "meshes":[]
             }
         ],
     "animations":
         {
-            "idleAnimation":{"startFrame":175,"endFrame":275},
-            "driveAnimation":{"startFrame":380,"endFrame":400},
-            "turnLeftAnimation":{"startFrame":405,"endFrame":425},
-            "turnRightAnimation":{"startFrame":435,"endFrame":455},
-            "spinOutAnimation":{"startFrame":275,"endFrame":375}
+            "idleAnimation":
+                {
+                    "startFrame":175,
+                    "endFrame":275,
+                    "actionFrame":0,
+                    "meshes":
+                        [
+                        ]
+                },
+            "driveAnimation":
+                {
+                    "startFrame":380,
+                    "endFrame":400,
+                    "actionFrame":0,
+                    "meshes":
+                        [
+                        ]
+                },
+            "turnLeftAnimation":
+                {
+                    "startFrame":405,
+                    "endFrame":425,
+                    "actionFrame":0,
+                    "meshes":
+                        [
+                        ]
+                },
+            "turnRightAnimation":
+                {
+                    "startFrame":435,
+                    "endFrame":455,
+                    "actionFrame":0,
+                    "meshes":
+                        [
+                        ]
+                },
+            "spinOutAnimation":
+                {
+                    "startFrame":275,
+                    "endFrame":375,
+                    "actionFrame":0,
+                    "meshes":
+                        [
+                        ]
+                }
         },
     "sounds":
         {
