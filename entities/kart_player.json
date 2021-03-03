@@ -85,45 +85,35 @@
                     "startFrame":175,
                     "endFrame":275,
                     "actionFrame":0,
-                    "meshes":
-                        [
-                        ]
+                    "meshes":null
                 },
             "driveAnimation":
                 {
                     "startFrame":380,
                     "endFrame":400,
                     "actionFrame":0,
-                    "meshes":
-                        [
-                        ]
+                    "meshes":null
                 },
             "turnLeftAnimation":
                 {
                     "startFrame":405,
                     "endFrame":425,
                     "actionFrame":0,
-                    "meshes":
-                        [
-                        ]
+                    "meshes":null
                 },
             "turnRightAnimation":
                 {
                     "startFrame":435,
                     "endFrame":455,
                     "actionFrame":0,
-                    "meshes":
-                        [
-                        ]
+                    "meshes":null
                 },
             "spinOutAnimation":
                 {
                     "startFrame":275,
                     "endFrame":375,
                     "actionFrame":0,
-                    "meshes":
-                        [
-                        ]
+                    "meshes":null
                 }
         },
     "sounds":
