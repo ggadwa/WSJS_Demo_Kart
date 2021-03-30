@@ -24,7 +24,7 @@ export default class WeaponBowlingBallClass extends EntityClass
     {
         super.ready();
         
-        this.ammoCount=10;
+        this.ammoCount=0;
         this.lastFireTimestamp=0;
     }
     

@@ -1,7 +1,7 @@
 import PointClass from '../../../code/utility/point.js';
 import EntityClass from '../../../code/game/entity.js';
 
-export default class PickupBowlingBallClass extends EntityClass
+export default class PickupStarClass extends EntityClass
 {
     constructor(core,name,jsonName,position,angle,data,mapSpawn,spawnedBy,heldBy,show)
     {
@@ -27,8 +27,6 @@ export default class PickupBowlingBallClass extends EntityClass
     
     run()
     {
-        let weapon;
-        
         super.run();
         
             // if hidden, count down to show
@@ -46,16 +44,14 @@ export default class PickupBowlingBallClass extends EntityClass
         this.angle.y=this.core.game.getPeriodicLinear(5000,360);
         
             // check for collisions from
-            // entities that have the bowling ball weapon
+            // entities that can add speed
             
         if (this.touchEntity===null) return;
+        if (this.touchEntity.addSpeed===undefined) return;
         
-        weapon=this.touchEntity.findHeldEntityByName('weapon_bowling_ball');
-        if (weapon===null) return;
-        
-            // pickup and add ammo
+            // pickup and add speed
             
-        weapon.addAmmo(1);
+        this.touchEntity.addSpeed(1);
             
         this.show=false;
         this.reappearTick=this.core.game.timestamp+2000;

@@ -76,7 +76,6 @@ export default class ProjectileBowlingBallClass extends EntityClass
 
         trackEntity=this.findClosestWithMaxAngle(this.position,this.angle,'kart_',this.spawnedBy,60);
         if (trackEntity!==null) {
-            console.log('tracking='+trackEntity.name);
             this.trackMotion.x=Math.sign(trackEntity.position.x-this.position.x)*50;
             this.trackMotion.y=0;       // follows the floor
             this.trackMotion.z=Math.sign(trackEntity.position.z-this.position.z)*50;
