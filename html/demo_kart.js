@@ -7,19 +7,29 @@ import ProjectileBowlingBallClass from '../entities/projectile_bowling_ball.js';
 
 export default class DemoClass extends ProjectClass
 {
-    mapCube(name)
+    mapModels(mapName,singlePlayer)
+    {
+        return(['bowling_ball','retro_car_blue','retro_car_red','rocket','star']);
+    }
+    
+    mapSounds(mapName,singlePlayer)
+    {
+        return(['bowling_ball_fire','burst','crash','engine','explosion','pickup','skid','start_tone']);
+    }
+    
+    mapCube(mapName,cubeName)
     {
         return(null);
     }
 
-    mapEffect(name)
+    mapEffect(mapName,effectName)
     {
         return(null);
     }
 
-    mapEntity(name)
+    mapEntity(mapName,entityName)
     {
-        switch (name) {
+        switch (entityName) {
             case 'pickup_bowling_ball':
                 return(PickupBowlingBallClass);
             case 'pickup_star':
