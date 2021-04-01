@@ -1,4 +1,8 @@
 import ProjectClass from '../../../code/main/project.js';
+import BlueBallClass from '../effects/blue_ball.js';
+import ExhaustClass from '../effects/exhaust.js';
+import SpotlightClass from '../effects/spotlight.js';
+import TireSmokeClass from '../effects/tire_smoke.js';
 import PickupBowlingBallClass from '../entities/pickup_bowling_ball.js';
 import PickupStarClass from '../entities/pickup_star.js';
 import PickupBurstClass from '../entities/pickup_burst.js';
@@ -10,6 +14,11 @@ export default class DemoClass extends ProjectClass
     mapModels(mapName,singlePlayer)
     {
         return(['bowling_ball','retro_car_blue','retro_car_red','rocket','star']);
+    }
+    
+    mapBitmaps(mapName,singlePlayer)
+    {
+        return(['textures/particle_smoke.png','textures/particle_blob.png','textures/paint_stroke.png','textures/particle_glow.png']);
     }
     
     mapSounds(mapName,singlePlayer)
@@ -24,6 +33,17 @@ export default class DemoClass extends ProjectClass
 
     mapEffect(mapName,effectName)
     {
+        switch (effectName) {
+            case 'blue_ball':
+                return(BlueBallClass);
+            case 'exhaust':
+                return(ExhaustClass);
+            case 'spotlight':
+                return(SpotlightClass);
+            case 'tire_smoke':
+                return(TireSmokeClass);
+        }
+        
         return(null);
     }
 
