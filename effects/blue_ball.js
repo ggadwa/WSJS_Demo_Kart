@@ -1,4 +1,5 @@
 import PointClass from '../../../code/utility/point.js';
+import ColorClass from '../../../code/utility/color.js';
 import EffectClass from '../../../code/game/effect.js';
 
 export default class BlueBallClass extends EffectClass
