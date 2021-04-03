@@ -5,8 +5,31 @@ export default class ProjectileBowlingBallClass extends EntityClass
 {
     constructor(core,name,jsonName,position,angle,data,mapSpawn,spawnedBy,heldBy,show)
     {
-        super(core,name,jsonName,position,angle,data,mapSpawn,spawnedBy,heldBy,show);
+        super(core,name,null,position,angle,data,mapSpawn,spawnedBy,heldBy,show);
         
+            // model
+            
+        this.modelName='bowling_ball';
+        this.frameRate=30;
+        this.rotationOrder=this.MODEL_ROTATION_ORDER_XYZ;
+        this.scale.setFromValues(2000,2000,2000);
+        this.radius=1000;
+        this.height=1000;
+        this.eyeOffset=0;
+        this.weight=100;
+        this.modelHideMeshes=[];
+
+            // physics
+            
+        this.maxBumpCount=0;
+        this.floorRiseHeight=8000;
+        this.collisionSpokeCount=24;
+        this.collisionHeightSegmentCount=4;
+        this.collisionHeightMargin=10;
+        this.canBeClimbed=false;
+
+            // variables
+            
         this.lifeTimestamp=0;
         this.stopped=false;
         

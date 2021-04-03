@@ -6,7 +6,7 @@ export default class WeaponBowlingBallClass extends EntityClass
 {
     constructor(core,name,json,position,angle,data,mapSpawn,spawnedBy,heldBy,show)
     {
-        super(core,name,json,position,angle,data,mapSpawn,spawnedBy,heldBy,show);
+        super(core,name,null,position,angle,data,mapSpawn,spawnedBy,heldBy,show);
         
         this.ammoCount=0;
         
