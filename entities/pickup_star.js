@@ -5,10 +5,33 @@ export default class PickupStarClass extends EntityClass
 {
     constructor(core,name,jsonName,position,angle,data,mapSpawn,spawnedBy,heldBy,show)
     {
-        super(core,name,jsonName,position,angle,data,mapSpawn,spawnedBy,heldBy,show);
+        super(core,name,null,position,angle,data,mapSpawn,spawnedBy,heldBy,show);
         
         this.passThrough=true;           // can pass through
         
+            // model
+        
+        this.modelName='star';
+        this.frameRate=30;
+        this.rotationOrder=this.MODEL_ROTATION_ORDER_XYZ;
+        this.scale.setFromValues(1000,1000,1000);
+        this.radius=2000;
+        this.height=2000;
+        this.eyeOffset=0;
+        this.weight=100;
+        this.modelHideMeshes=[];
+        
+            // physics
+            
+        this.maxBumpCount=0;
+        this.floorRiseHeight=2000;
+        this.collisionSpokeCount=8;
+        this.collisionHeightSegmentCount=2;
+        this.collisionHeightMargin=10;
+        this.canBeClimbed=false;
+
+            // variables
+            
         this.originalY=0;
         this.reappearTick=0;
         
