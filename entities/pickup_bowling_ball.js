@@ -72,13 +72,11 @@ export default class PickupBowlingBallClass extends EntityClass
             // entities that have the bowling ball weapon
             
         if (this.touchEntity===null) return;
-        
-        weapon=this.touchEntity.findHeldEntityByName('weapon_bowling_ball');
-        if (weapon===null) return;
+        if (this.touchEntity.bowlingBallWeapon===undefined) return;
         
             // pickup and add ammo
             
-        weapon.addAmmo(1);
+        this.touchEntity.bowlingBallWeapon.addAmmo(1);
             
         this.show=false;
         this.reappearTick=this.core.game.timestamp+2000;

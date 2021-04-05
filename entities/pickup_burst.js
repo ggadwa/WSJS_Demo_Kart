@@ -97,7 +97,7 @@ export default class PickupBurstClass extends EntityClass
         
             // pickup and add burst
             
-        this.touchEntity.addBurst(75,2500);
+        this.touchEntity.addBurst();
         
         this.show=false;
         this.reappearTick=this.core.game.timestamp+2000;

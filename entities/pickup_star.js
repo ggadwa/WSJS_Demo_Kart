@@ -70,11 +70,11 @@ export default class PickupStarClass extends EntityClass
             // entities that can add speed
             
         if (this.touchEntity===null) return;
-        if (this.touchEntity.addSpeed===undefined) return;
+        if (this.touchEntity.addStar===undefined) return;
         
-            // pickup and add speed
+            // pickup and add star
             
-        this.touchEntity.addSpeed(1);
+        this.touchEntity.addStar();
             
         this.show=false;
         this.reappearTick=this.core.game.timestamp+2000;
