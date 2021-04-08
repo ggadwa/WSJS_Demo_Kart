@@ -99,10 +99,14 @@ export default class PickupBurstClass extends EntityClass
             
         this.touchEntity.addBurst();
         
-        this.show=false;
-        this.reappearTick=this.core.game.timestamp+2000;
+        //this.show=false;
+        //this.reappearTick=this.core.game.timestamp+500;
         
         this.touchEntity.playSound(this.pickupSound);
+        
+        this.touchEntity=null;
+        this.setRandomPosition();
+        this.originalY=this.position.y;     // need to reset floating position
     }
     
     drawSetup()

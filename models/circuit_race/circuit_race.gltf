@@ -1,6 +1,6 @@
 {
     "asset" : {
-        "generator" : "Khronos glTF Blender I/O v1.4.40",
+        "generator" : "Khronos glTF Blender I/O v1.5.17",
         "version" : "2.0"
     },
     "extensionsUsed" : [
@@ -512,10 +512,10 @@
             "mesh" : 11,
             "name" : "Box140",
             "rotation" : [
-                -0.46351292729377747,
+                -0.4635128676891327,
+                -0.5339998006820679,
                 -0.5339998602867126,
-                -0.5339999198913574,
-                0.4635128378868103
+                0.4635127782821655
             ],
             "scale" : [
                 1.7836750745773315,
@@ -532,10 +532,10 @@
             "mesh" : 12,
             "name" : "Box141",
             "rotation" : [
-                -0.43153810501098633,
+                -0.43153804540634155,
+                -0.5601562261581421,
                 -0.5601562857627869,
-                -0.5601563453674316,
-                0.43153777718544006
+                0.4315377175807953
             ],
             "scale" : [
                 1.7836753129959106,
@@ -2594,10 +2594,10 @@
         {
             "name" : "lamppost011",
             "rotation" : [
-                -0.4963742196559906,
-                -0.503600001335144,
-                -0.503600001335144,
-                0.4963737428188324
+                -0.4963741600513458,
+                -0.5035999417304993,
+                -0.5035999417304993,
+                0.4963736832141876
             ],
             "translation" : [
                 -37.10755157470703,
@@ -2608,10 +2608,10 @@
         {
             "name" : "lamppost013",
             "rotation" : [
-                -0.4963742196559906,
-                -0.503600001335144,
-                -0.503600001335144,
-                0.4963737428188324
+                -0.4963741600513458,
+                -0.5035999417304993,
+                -0.5035999417304993,
+                0.4963736832141876
             ],
             "translation" : [
                 -61.60822677612305,
@@ -2928,10 +2928,10 @@
         {
             "name" : "lamppost045",
             "rotation" : [
-                -0.3526995778083801,
-                0.6128647327423096,
-                0.6128647327423096,
-                0.35269901156425476
+                -0.3526996076107025,
+                0.6128647923469543,
+                0.6128647923469543,
+                0.35269904136657715
             ],
             "translation" : [
                 -3.009692430496216,
@@ -3442,10 +3442,10 @@
         {
             "name" : "lamppost091",
             "rotation" : [
-                -0.4462645947933197,
+                -0.4462646543979645,
+                0.5484961271286011,
                 0.5484960675239563,
-                0.5484960079193115,
-                0.4462645649909973
+                0.4462646245956421
             ],
             "translation" : [
                 35.07572555541992,
@@ -4688,9 +4688,9 @@
             "name" : "Cube001",
             "rotation" : [
                 0,
-                -0.12124381214380264,
+                -0.12124382704496384,
                 0,
-                0.9926227331161499
+                0.9926228523254395
             ],
             "translation" : [
                 -3.1541290283203125,
@@ -5105,10 +5105,10 @@
             "mesh" : 193,
             "name" : "Object015",
             "rotation" : [
-                -0.45305752754211426,
+                -0.4530574679374695,
+                -0.5428985953330994,
                 -0.5428986549377441,
-                -0.5428987145423889,
-                0.45305749773979187
+                0.4530574381351471
             ],
             "scale" : [
                 1.783675193786621,
@@ -5125,10 +5125,10 @@
             "mesh" : 194,
             "name" : "Object016",
             "rotation" : [
-                -0.49552908539772034,
+                -0.49552902579307556,
+                -0.504431426525116,
                 -0.5044314861297607,
-                -0.5044315457344055,
-                0.49552878737449646
+                0.4955287277698517
             ],
             "scale" : [
                 1.7836753129959106,
@@ -5525,10 +5525,10 @@
             "mesh" : 214,
             "name" : "Object037",
             "rotation" : [
-                -0.7511001825332642,
-                -0.0003800090926233679,
-                -0.00043246513814665377,
-                0.6601879596710205
+                -0.7511003017425537,
+                -0.0003800091508310288,
+                -0.0004324651963543147,
+                0.6601880192756653
             ],
             "scale" : [
                 1.7836740016937256,
@@ -5745,10 +5745,10 @@
             "mesh" : 225,
             "name" : "Object048",
             "rotation" : [
-                -0.7774834036827087,
-                -0.0003620157949626446,
-                -0.00044764907215721905,
-                0.6289031505584717
+                -0.7774835228919983,
+                -0.00036201582406647503,
+                -0.00044764913036487997,
+                0.6289032101631165
             ],
             "scale" : [
                 1.7836740016937256,
@@ -8573,10 +8573,10 @@
             "mesh" : 347,
             "name" : "rock_big.018",
             "rotation" : [
-                0.6772931814193726,
-                -0.4107888638973236,
-                0.04193439707159996,
-                0.6089073419570923
+                0.6772931218147278,
+                -0.41078880429267883,
+                0.04193439334630966,
+                0.6089072823524475
             ],
             "scale" : [
                 44.22606658935547,
@@ -8833,10 +8833,10 @@
             "mesh" : 360,
             "name" : "rock_small.003",
             "rotation" : [
-                0.38468700647354126,
-                -0.7968555688858032,
-                0.06579811871051788,
-                -0.4612027406692505
+                0.3846869468688965,
+                -0.7968554496765137,
+                0.06579811125993729,
+                -0.4612026810646057
             ],
             "scale" : [
                 35.89426040649414,
@@ -8853,10 +8853,10 @@
             "mesh" : 361,
             "name" : "rock_small.004",
             "rotation" : [
-                -0.049030426889657974,
-                0.8106539845466614,
-                0.17360161244869232,
-                0.5570447444915771
+                -0.04903041943907738,
+                0.8106538653373718,
+                0.17360159754753113,
+                0.5570446848869324
             ],
             "scale" : [
                 35.89426040649414,
@@ -8953,10 +8953,10 @@
             "mesh" : 366,
             "name" : "rock_small.009",
             "rotation" : [
-                0.5919840335845947,
-                0.4194028377532959,
-                0.5236136317253113,
-                0.4466376006603241
+                0.59198397397995,
+                0.4194027781486511,
+                0.5236135721206665,
+                0.4466375410556793
             ],
             "scale" : [
                 35.89426040649414,
@@ -9013,10 +9013,10 @@
             "mesh" : 369,
             "name" : "rock_small.012",
             "rotation" : [
-                0.06487924605607986,
-                0.7832412123680115,
-                0.2466079145669937,
-                0.5670173168182373
+                0.06487923860549927,
+                0.7832410931587219,
+                0.24660788476467133,
+                0.5670172572135925
             ],
             "scale" : [
                 35.89426040649414,
@@ -9153,10 +9153,10 @@
             "mesh" : 376,
             "name" : "rock_small.019",
             "rotation" : [
-                0.17193198204040527,
-                -0.8228326439857483,
-                -0.09036708623170853,
-                -0.5340597629547119
+                0.17193196713924408,
+                -0.8228325247764587,
+                -0.09036707878112793,
+                -0.5340597033500671
             ],
             "scale" : [
                 35.89426040649414,
@@ -9253,10 +9253,10 @@
             "mesh" : 381,
             "name" : "rock_small.024",
             "rotation" : [
-                0.7668592929840088,
-                0.1134430319070816,
-                0.5679699778556824,
-                0.27652817964553833
+                0.7668591737747192,
+                0.11344301700592041,
+                0.5679699182510376,
+                0.27652814984321594
             ],
             "scale" : [
                 35.89426040649414,
@@ -9553,10 +9553,10 @@
             "mesh" : 396,
             "name" : "rock_small.047",
             "rotation" : [
-                0.7891646027565002,
-                -0.4098970592021942,
-                0.44932833313941956,
-                -0.08548653870820999
+                0.7891644835472107,
+                -0.40989699959754944,
+                0.4493282735347748,
+                -0.0854865312576294
             ],
             "scale" : [
                 35.89426040649414,
@@ -9653,10 +9653,10 @@
             "mesh" : 401,
             "name" : "rock_small.052",
             "rotation" : [
-                0.8122248649597168,
-                -0.31727421283721924,
-                0.4893038868904114,
-                -0.014484135434031487
+                0.8122247457504272,
+                -0.31727418303489685,
+                0.4893038272857666,
+                -0.014484133571386337
             ],
             "scale" : [
                 35.89426040649414,
@@ -11295,34 +11295,28 @@
         {
             "name" : "Rail",
             "normalTexture" : {
-                "index" : 0,
-                "texCoord" : 0
+                "index" : 0
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 1,
-                    "texCoord" : 0
+                    "index" : 1
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 2,
-                    "texCoord" : 0
+                    "index" : 2
                 }
             }
         },
         {
             "name" : "lamppost",
             "normalTexture" : {
-                "index" : 3,
-                "texCoord" : 0
+                "index" : 3
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 4,
-                    "texCoord" : 0
+                    "index" : 4
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 5,
-                    "texCoord" : 0
+                    "index" : 5
                 }
             }
         },
@@ -11330,8 +11324,7 @@
             "name" : "Finish Gate",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 6,
-                    "texCoord" : 0
+                    "index" : 6
                 },
                 "metallicFactor" : 0.20000000298023224,
                 "roughnessFactor" : 0.800000011920929
@@ -11340,17 +11333,14 @@
         {
             "name" : "Brick Wall",
             "normalTexture" : {
-                "index" : 7,
-                "texCoord" : 0
+                "index" : 7
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 8,
-                    "texCoord" : 0
+                    "index" : 8
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 9,
-                    "texCoord" : 0
+                    "index" : 9
                 }
             }
         },
@@ -11358,8 +11348,7 @@
             "name" : "Grass",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 10,
-                    "texCoord" : 0
+                    "index" : 10
                 },
                 "metallicFactor" : 0.4000000059604645,
                 "roughnessFactor" : 0.7071067690849304
@@ -11372,8 +11361,7 @@
                 1
             ],
             "emissiveTexture" : {
-                "index" : 11,
-                "texCoord" : 0
+                "index" : 11
             },
             "extras" : {
                 "wsjsNoCollision" : 1
@@ -11381,8 +11369,7 @@
             "name" : "lamp",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 12,
-                    "texCoord" : 0
+                    "index" : 12
                 },
                 "metallicFactor" : 0.4000000059604645,
                 "roughnessFactor" : 0.7071067690849304
@@ -11403,8 +11390,7 @@
                         ]
                     }
                 },
-                "index" : 13,
-                "texCoord" : 0
+                "index" : 13
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
@@ -11420,8 +11406,7 @@
                             ]
                         }
                     },
-                    "index" : 14,
-                    "texCoord" : 0
+                    "index" : 14
                 },
                 "metallicRoughnessTexture" : {
                     "extensions" : {
@@ -11436,8 +11421,7 @@
                             ]
                         }
                     },
-                    "index" : 15,
-                    "texCoord" : 0
+                    "index" : 15
                 }
             }
         },
@@ -11445,8 +11429,7 @@
             "name" : "Billboard",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 16,
-                    "texCoord" : 0
+                    "index" : 16
                 },
                 "metallicFactor" : 0.4000000059604645,
                 "roughnessFactor" : 0.1961161345243454
@@ -11456,8 +11439,7 @@
             "name" : "Road Finish Line",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 17,
-                    "texCoord" : 0
+                    "index" : 17
                 },
                 "metallicFactor" : 0.4000000059604645,
                 "roughnessFactor" : 0.7071067690849304
@@ -11467,8 +11449,7 @@
             "name" : "Road",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 18,
-                    "texCoord" : 0
+                    "index" : 18
                 },
                 "metallicFactor" : 0.4000000059604645,
                 "roughnessFactor" : 0.7071067690849304
@@ -11478,8 +11459,7 @@
             "name" : "Road Block",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 19,
-                    "texCoord" : 0
+                    "index" : 19
                 },
                 "metallicFactor" : 0.4000000059604645,
                 "roughnessFactor" : 0.7071067690849304
@@ -11488,34 +11468,28 @@
         {
             "name" : "Arid Rock",
             "normalTexture" : {
-                "index" : 20,
-                "texCoord" : 0
+                "index" : 20
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 21,
-                    "texCoord" : 0
+                    "index" : 21
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 22,
-                    "texCoord" : 0
+                    "index" : 22
                 }
             }
         },
         {
             "name" : "Wall",
             "normalTexture" : {
-                "index" : 23,
-                "texCoord" : 0
+                "index" : 23
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 24,
-                    "texCoord" : 0
+                    "index" : 24
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 25,
-                    "texCoord" : 0
+                    "index" : 25
                 }
             }
         },
@@ -11523,13 +11497,11 @@
             "doubleSided" : true,
             "name" : "Tree",
             "normalTexture" : {
-                "index" : 26,
-                "texCoord" : 0
+                "index" : 26
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 27,
-                    "texCoord" : 0
+                    "index" : 27
                 }
             }
         },
@@ -11537,30 +11509,25 @@
             "doubleSided" : true,
             "name" : "rock_big",
             "normalTexture" : {
-                "index" : 28,
-                "texCoord" : 0
+                "index" : 28
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 29,
-                    "texCoord" : 0
+                    "index" : 29
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 30,
-                    "texCoord" : 0
+                    "index" : 30
                 }
             }
         },
         {
             "name" : "rock_small",
             "normalTexture" : {
-                "index" : 31,
-                "texCoord" : 0
+                "index" : 31
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 32,
-                    "texCoord" : 0
+                    "index" : 32
                 },
                 "metallicFactor" : 0.4000000059604645,
                 "roughnessFactor" : 0.7071067690849304
@@ -11571,8 +11538,7 @@
             "name" : "SkyBox",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 33,
-                    "texCoord" : 0
+                    "index" : 33
                 },
                 "metallicFactor" : 0,
                 "roughnessFactor" : 0.5
@@ -11596,17 +11562,14 @@
             "doubleSided" : true,
             "name" : "factory",
             "normalTexture" : {
-                "index" : 34,
-                "texCoord" : 0
+                "index" : 34
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 35,
-                    "texCoord" : 0
+                    "index" : 35
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 36,
-                    "texCoord" : 0
+                    "index" : 36
                 }
             }
         },
@@ -11614,17 +11577,14 @@
             "doubleSided" : true,
             "name" : "factory4",
             "normalTexture" : {
-                "index" : 37,
-                "texCoord" : 0
+                "index" : 37
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 38,
-                    "texCoord" : 0
+                    "index" : 38
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 39,
-                    "texCoord" : 0
+                    "index" : 39
                 }
             }
         },
@@ -11632,17 +11592,14 @@
             "doubleSided" : true,
             "name" : "factory128",
             "normalTexture" : {
-                "index" : 40,
-                "texCoord" : 0
+                "index" : 40
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 41,
-                    "texCoord" : 0
+                    "index" : 41
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 42,
-                    "texCoord" : 0
+                    "index" : 42
                 }
             }
         },
@@ -11650,17 +11607,14 @@
             "doubleSided" : true,
             "name" : "wire_145028177",
             "normalTexture" : {
-                "index" : 43,
-                "texCoord" : 0
+                "index" : 43
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 44,
-                    "texCoord" : 0
+                    "index" : 44
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 45,
-                    "texCoord" : 0
+                    "index" : 45
                 }
             }
         }
@@ -19363,7 +19317,7 @@
         },
         {
             "extras" : {
-                "wsjsKartStart" : 1
+                "wsjsSpot" : "{\"name\":\"start1\",\"data\":{}}"
             },
             "name" : "spawn",
             "primitives" : [
@@ -19380,7 +19334,7 @@
         },
         {
             "extras" : {
-                "wsjsKartStart" : 1
+                "wsjsSpot" : "{\"name\":\"start2\",\"data\":{}}"
             },
             "name" : "spawn.001",
             "primitives" : [
@@ -19397,7 +19351,7 @@
         },
         {
             "extras" : {
-                "wsjsKartStart" : 1
+                "wsjsSpot" : "{\"name\":\"start3\",\"data\":{}}"
             },
             "name" : "spawn.002",
             "primitives" : [
@@ -19414,7 +19368,7 @@
         },
         {
             "extras" : {
-                "wsjsKartStart" : 1
+                "wsjsSpot" : "{\"name\":\"start4\",\"data\":{}}"
             },
             "name" : "spawn.003",
             "primitives" : [
@@ -19431,7 +19385,7 @@
         },
         {
             "extras" : {
-                "wsjsKartStart" : 1
+                "wsjsSpot" : "{\"name\":\"start5\",\"data\":{}}"
             },
             "name" : "spawn.004",
             "primitives" : [
@@ -44653,7 +44607,7 @@
     "samplers" : [
         {
             "magFilter" : 9729,
-            "minFilter" : 9986
+            "minFilter" : 9987
         }
     ],
     "buffers" : [
