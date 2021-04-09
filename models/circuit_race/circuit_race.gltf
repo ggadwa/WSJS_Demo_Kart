@@ -19232,7 +19232,7 @@
         },
         {
             "extras" : {
-                "wsjsEntity" : "{\"entity\":\"kart_player\",\"data\":{\"speed\":1500,\"turnSpeed\":1.5}}"
+                "wsjsEntity" : "{\"entity\":\"kart_player\",\"data\":{\"speed\":1500,\"turnSpeed\":1.5,\"acceleration\":8,\"weight\":500}}"
             },
             "name" : "kart_player.001",
             "primitives" : [
@@ -19249,7 +19249,7 @@
         },
         {
             "extras" : {
-                "wsjsEntity" : "{\"entity\":\"kart_bot\",\"data\":{\"speed\":1490,\"turnSpeed\":1.6}}"
+                "wsjsEntity" : "{\"entity\":\"kart_bot\",\"data\":{\"speed\":1470,\"turnSpeed\":1.7,\"acceleration\":10,\"weight\":400}}"
             },
             "name" : "kart_bot_1.001",
             "primitives" : [
@@ -19266,7 +19266,7 @@
         },
         {
             "extras" : {
-                "wsjsEntity" : "{\"entity\":\"kart_bot\",\"data\":{\"speed\":1480,\"turnSpeed\":1.55}}"
+                "wsjsEntity" : "{\"entity\":\"kart_bot\",\"data\":{\"speed\":1485,\"turnSpeed\":1.6,\"acceleration\":9,\"weight\":450}}"
             },
             "name" : "kart_bot_2.001",
             "primitives" : [
@@ -19283,7 +19283,7 @@
         },
         {
             "extras" : {
-                "wsjsEntity" : "{\"entity\":\"kart_bot\",\"data\":{\"speed\":1520,\"turnSpeed\":1.4}}"
+                "wsjsEntity" : "{\"entity\":\"kart_bot\",\"data\":{\"speed\":1530,\"turnSpeed\":1.3,\"acceleration\":6,\"weight\":600}}"
             },
             "name" : "kart_bot_3.001",
             "primitives" : [
@@ -19300,7 +19300,7 @@
         },
         {
             "extras" : {
-                "wsjsEntity" : "{\"entity\":\"kart_bot\",\"data\":{\"speed\":1510,\"turnSpeed\":1.45}}"
+                "wsjsEntity" : "{\"entity\":\"kart_bot\",\"data\":{\"speed\":1515,\"turnSpeed\":1.4,\"acceleration\":7,\"weight\":550}}"
             },
             "name" : "kart_bot_4.001",
             "primitives" : [

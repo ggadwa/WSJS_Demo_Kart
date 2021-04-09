@@ -3,6 +3,8 @@ import BlueBallClass from '../effects/blue_ball.js';
 import ExhaustClass from '../effects/exhaust.js';
 import SpotlightClass from '../effects/spotlight.js';
 import TireSmokeClass from '../effects/tire_smoke.js';
+import KartPlayerClass from '../entities/entity_kart_player.js';
+import KartBotClass from '../entities/entity_kart_bot.js';
 import PickupBowlingBallClass from '../entities/pickup_bowling_ball.js';
 import PickupStarClass from '../entities/pickup_star.js';
 import PickupBurstClass from '../entities/pickup_burst.js';
@@ -50,6 +52,10 @@ export default class DemoClass extends ProjectClass
     mapEntity(mapName,entityName)
     {
         switch (entityName) {
+            case 'kart_player':
+                return(KartPlayerClass);
+            case 'kart_bot':
+                return(KartBotClass);
             case 'pickup_bowling_ball':
                 return(PickupBowlingBallClass);
             case 'pickup_star':
