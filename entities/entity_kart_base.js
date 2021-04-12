@@ -1,4 +1,5 @@
 import PointClass from '../../../code/utility/point.js';
+import LineClass from '../../../code/utility/line.js';
 import EntityClass from '../../../code/game/entity.js';
 
 //
@@ -62,15 +63,22 @@ export default class KartBaseClass extends EntityClass
         this.engineSoundPlayIdx=0;
         this.engineSoundRateAirIncrease=0;
         
-            // variables for bots, they
-            // are here so player kart can self-drive
-            // after win/loss
+            // variables for self driving, for bots
+            // and for player after winning
             
+        this.travelToNodeIdx=-1;
+        this.travelToPoint=new PointClass(0,0,0);
+        
         this.pathNodeIdx=-1;
         this.trackZOffset=0;
         
         this.gotoRotPoint=new PointClass(0,0,0);
         this.gotoPosition=new PointClass(0,0,0);
+        
+        
+        this.tempPoint=new PointClass(0,0,0);
+        this.kartTravelLine=new LineClass(new PointClass(0,0,0),new PointClass(0,0,0));
+        this.kartTravelLineHitPoint=new PointClass(0,0,0);
         
             // lap calculations
             
@@ -88,12 +96,14 @@ export default class KartBaseClass extends EntityClass
         this.placeNodeDistance=0;
         this.placeLap=-1;
         
-        this.endNodeIdx=0;
-        this.goalNodeIdx=0;
+        this.bowlingBallWeapon=null;
+        
+            // some static nodes
+            
+        this.goalNodeIdx=-1;
+        this.endNodeIdx=-1;
         this.firstNodeIdx=0;
         this.midpointNodeIdx=0;
-        
-        this.bowlingBallWeapon=null;
         
             // animations
             
@@ -130,11 +140,6 @@ export default class KartBaseClass extends EntityClass
         this.rigidGotoAngle=new PointClass(0,0,0);
         this.drawAngle=new PointClass(0,0,0);
         this.fireAngle=new PointClass(0,0,0);
-        
-            // some static nodes
-            
-        this.goalNodeIdx=-1;
-        this.endNodeIdx=-1;
         
             // no seal, object is extended
     }
@@ -378,6 +383,8 @@ export default class KartBaseClass extends EntityClass
             
         goalPosition=this.getNodePosition(this.goalNodeIdx);
         this.trackZOffset=goalPosition.z-this.position.z;
+        
+        
     }
     
     pathSetup(nodeAdd)
@@ -658,7 +665,7 @@ export default class KartBaseClass extends EntityClass
         sx2=this.placeCalcKartLine2.x-entity.position.x;
         sz2=this.placeCalcKartLine2.z-entity.position.z;
 
-        f=(-sx2 * sz1 + sx1 * sz2);
+        f=((-sx2*sz1)+(sx1*sz2));
         if (f===0) return(-1);
         
         s=((-sz1*(this.placeCalcPassLine1.x-entity.position.x))+(sx1*(this.placeCalcPassLine1.z-entity.position.z)))/f;

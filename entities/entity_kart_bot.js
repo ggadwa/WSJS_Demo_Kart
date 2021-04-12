@@ -65,6 +65,8 @@ export default class KartBotClass extends KartBaseClass
         
     checkFire()
     {
+        return(false);
+        
             // is it time to fire?
         
         if (this.core.game.timestamp<this.nextFireTick) return(false);
@@ -107,6 +109,8 @@ export default class KartBotClass extends KartBaseClass
             // skip if AI is frozen
             
         if (this.core.game.freezeAI) return;
+        
+        return;
         
             // run the kart base
         
