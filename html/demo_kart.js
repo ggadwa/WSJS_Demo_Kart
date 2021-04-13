@@ -70,4 +70,13 @@ export default class DemoClass extends ProjectClass
 
         return(null);
     }
+    
+    mapStartup(mapName)
+    {
+        switch (mapName) {
+            case 'circuit_race':
+                this.buildPerpendicularLineForLoop('goal','end',100000);     // enough to reach edge of road/area
+                break;
+        }
+    }
 }

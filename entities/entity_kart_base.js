@@ -37,8 +37,8 @@ export default class KartBaseClass extends EntityClass
         this.forwardBrakeDeceleration=data.speed*0.04;
         this.reverseBrakeDeceleration=data.speed*0.05;
         this.jumpHeight=1000+((500-data.weight)*0.5);
-        this.spinOutSpeed=6+((500-data.weight)*0.06);
-        this.driftDecelerationFactor=0.95+((data.weight-500)*0.0005);
+        this.spinOutSpeed=6+((500-data.weight)*0.02);
+        this.driftDecelerationFactor=0.98+((data.weight-500)*0.0002);
         
             // variables
         
@@ -69,24 +69,11 @@ export default class KartBaseClass extends EntityClass
         this.travelToNodeIdx=-1;
         this.travelToPoint=new PointClass(0,0,0);
         
-        this.pathNodeIdx=-1;
-        this.trackZOffset=0;
-        
-        this.gotoRotPoint=new PointClass(0,0,0);
-        this.gotoPosition=new PointClass(0,0,0);
-        
-        
         this.tempPoint=new PointClass(0,0,0);
         this.kartTravelLine=new LineClass(new PointClass(0,0,0),new PointClass(0,0,0));
         this.kartTravelLineHitPoint=new PointClass(0,0,0);
         
             // lap calculations
-            
-        this.LAP_STATUS_BEFORE_GOAL=0;
-        this.LAP_STATUS_PASS_GOAL=1;
-        this.LAP_STATUS_PASSING_MIDPOINT=2;
-        
-        this.lapStatus=0;
             
         this.lap=0;
         this.previousLap=-1;
@@ -94,7 +81,8 @@ export default class KartBaseClass extends EntityClass
         this.previousPlace=-1;
         this.placeNodeIdx=0;
         this.placeNodeDistance=0;
-        this.placeLap=-1;
+        
+            // the weapon
         
         this.bowlingBallWeapon=null;
         
@@ -102,8 +90,6 @@ export default class KartBaseClass extends EntityClass
             
         this.goalNodeIdx=-1;
         this.endNodeIdx=-1;
-        this.firstNodeIdx=0;
-        this.midpointNodeIdx=0;
         
             // animations
             
@@ -121,6 +107,12 @@ export default class KartBaseClass extends EntityClass
         this.crashKartSound={"name":"crash","rate":1.0,"randomRateAdd":0.2,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false};
         this.crashWallSound={"name":"crash","rate":0.8,"randomRateAdd":0.2,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false};
         
+            // remember the original angle
+            // so we can restart players into bots
+            // after they win
+             
+        this.kartStartAngY=this.angle.y;
+        
             // pre-allocate
             
         this.movement=new PointClass(0,0,0);
@@ -129,12 +121,6 @@ export default class KartBaseClass extends EntityClass
         this.bounceReflectMovement=new PointClass(0,0,0);
         this.smokePosition=new PointClass(0,0,0);
         this.burstPosition=new PointClass(0,0,0);
-        
-        this.placeCalcRotPoint=new PointClass(0,0,0);
-        this.placeCalcPassLine1=new PointClass(0,0,0);
-        this.placeCalcPassLine2=new PointClass(0,0,0);
-        this.placeCalcKartLine2=new PointClass(0,0,0);
-        this.placeCalcKartCollidePoint=new PointClass(0,0,0);
         
         this.rigidAngle=new PointClass(0,0,0);
         this.rigidGotoAngle=new PointClass(0,0,0);
@@ -184,9 +170,7 @@ export default class KartBaseClass extends EntityClass
         
         this.burstEndTimestamp=0
         
-        this.lapStatus=this.LAP_STATUS_BEFORE_GOAL;
-        
-        this.lap=-1;
+        this.lap=-1;            // we are currently starting before the goal
         
         this.lastDrawTick=this.core.game.timestamp;
         this.rigidGotoAngle.setFromValues(0,0,0);
@@ -204,8 +188,6 @@ export default class KartBaseClass extends EntityClass
             
         this.endNodeIdx=this.findKeyNodeIndex('end');
         this.goalNodeIdx=this.findKeyNodeIndex('goal');
-        this.firstNodeIdx=this.findKeyNodeIndex('first');
-        this.midpointNodeIdx=this.findKeyNodeIndex('midpoint');
         
             // get a random place from the spots
             
@@ -349,70 +331,80 @@ export default class KartBaseClass extends EntityClass
     }
     
         //
-        // ai routines
+        // ai path routines
         //
         
-    calcGotoPosition(fromNodeIdx,toNodeIdx)
+    pathSetup()
     {
-        let angY;
+        this.travelToNodeIdx=this.goalNodeIdx;
         
-            // calc the goto position from the
-            // next node and the track offset
+            // use starting angle to get initial forward path
             
-            // get direction of driving,
-            // add in 90 degrees and then rotate
-            // the offset
-            
-        angY=this.getNodePosition(fromNodeIdx).angleYTo(this.getNodePosition(toNodeIdx))+90;
-        if (angY>360.0) angY-=360.0;
-        
-        this.gotoRotPoint.setFromValues(0,0,this.trackZOffset);
-        this.gotoRotPoint.rotateY(null,angY);
-        
-        this.gotoPosition.setFromAddPoint(this.getNodePosition(toNodeIdx),this.gotoRotPoint);
-    }
-    
-    trackOffsetSetup()
-    {
-        let goalPosition;
-        
-            // we assume all maps have the starting direction
-            // heading -x, so we get the Z distance and that
-            // makes our track when turned 90 degrees from
-            // the node path
-            
-        goalPosition=this.getNodePosition(this.goalNodeIdx);
-        this.trackZOffset=goalPosition.z-this.position.z;
-        
-        
-    }
-    
-    pathSetup(nodeAdd)
-    {
-            // always start by going to node after the goal
-            
-        this.pathNodeIdx=this.goalNodeIdx+nodeAdd;
-        this.calcGotoPosition(this.goalNodeIdx,this.pathNodeIdx);
+        this.travelToPoint.setFromValues(0,0,100000);
+        this.travelToPoint.rotateY(null,this.kartStartAngY);
+        this.travelToPoint.addPoint(this.position);
     }
     
     pathRun()
     {
-        let fromNodeIdx;
+        let nextNodeIdx;
+        let nodeIdx,nodeTryCount;
+        let origNodeIdx;
         
-            // have we hit the next drive to position?
+            // have we passed the current perpendicular
+            // line of the next node?
+
+            // create a line from kart center to radius*2 (for slop)
+            // off the kart to collide with perpendicular line
             
-        if (this.position.distance(this.gotoPosition)<8000) {
-            fromNodeIdx=this.pathNodeIdx;
+        this.tempPoint.setFromValues(0,0,200000);
+        this.tempPoint.rotateY(null,this.angle.y);
+        this.tempPoint.addPoint(this.position);
+        
+        this.kartTravelLine.setFromValues(this.position,this.tempPoint);
+        
+            // collide it with current travel to node
+            // if we don't collide, make sure we can collide
+            // with next node before setting it, else we
+            // are way off course and don't change node
             
-            if (this.getNodeKey(this.pathNodeIdx)==='end') {
-                this.pathNodeIdx=this.findKeyNodeIndex('goal');
+            // note if no hit, then kartTravelLineHitPoint will be last
+            // time we got a hit, which we will use to calculate the next
+            // point to head for
+        
+        if (this.checkPathPerpendicularXZCollision(this.travelToNodeIdx,this.kartTravelLine,this.kartTravelLineHitPoint)) return;
+        
+            // no collision, so we passed a node, check to
+            // see if it's the goal
+        
+        if (this.travelToNodeIdx===this.goalNodeIdx) this.lap++;
+ 
+            // now find the next node we can hit
+            // we just give up if we are so far off course
+            // that nothing works after 10 nodes
+            
+        origNodeIdx=this.travelToNodeIdx;
+           
+        nodeTryCount=10;
+        nodeIdx=this.travelToNodeIdx;
+        
+        while (true) {
+            nextNodeIdx=(nodeIdx===this.endNodeIdx)?this.goalNodeIdx:(nodeIdx+1);
+            if (this.checkPathPerpendicularXZCollision(nextNodeIdx,this.kartTravelLine,null)) {
+                this.travelToNodeIdx=nextNodeIdx;
+                break;
             }
-            else {
-                this.pathNodeIdx++;
-            }
             
-            this.calcGotoPosition(fromNodeIdx,this.pathNodeIdx);
+            nodeIdx=nextNodeIdx;
+            nodeTryCount--;
+            if (nodeTryCount===0) return;       // bailing, way too far off course
         }
+        
+            // get the hit point on the line we just passed and
+            // use that to create a equal point on the next line,
+            // we use this to travel to
+            
+        this.translatePathPerpendicularXZHitToOtherPerpendicularXZHit(origNodeIdx,this.kartTravelLineHitPoint,this.travelToNodeIdx,this.travelToPoint);
     }
 
         //
@@ -619,72 +611,11 @@ export default class KartBaseClass extends EntityClass
         //
         // calculate kart place
         //
-        
-    collideEntityWithNodeLine(entity,nodeIdx)
-    {
-        let prevNodeIdx;
-        let angY,angY2,nodeDist;
-        let sx1,sz1,sx2,sz2;
-        let f,s,t,px,pz;
-        
-            // get the perpendicular line through this node
-            // from the line going through the previous node to this
-            // node.  This is the line we collide the kart with to
-            // find the distance to "passing" this node
-            
-        prevNodeIdx=(nodeIdx===this.goalNodeIdx)?this.endNodeIdx:(nodeIdx-1);
-
-        angY=this.getNodePosition(prevNodeIdx).angleYTo(this.getNodePosition(nodeIdx));
-            
-        angY2=angY+90;
-        if (angY2>360.0) angY2-=360.0;
-
-        this.placeCalcRotPoint.setFromValues(0,0,(entity.radius*10));        // this is a bit hard set, but we say only 10 karts width for each tracks
-        this.placeCalcRotPoint.rotateY(null,angY2);
-        this.placeCalcPassLine1.setFromAddPoint(this.getNodePosition(nodeIdx),this.placeCalcRotPoint);
-        this.placeCalcPassLine2.setFromSubPoint(this.getNodePosition(nodeIdx),this.placeCalcRotPoint);
-            
-            // get a distance between these nodes, we use
-            // this to determine the length of the line from
-            // the kart which will collide with this node
-
-        nodeDist=this.getNodePosition(prevNodeIdx).distanceScrubY(this.getNodePosition(nodeIdx));
-
-            // get a line from the kart traveling
-            // down the node line
-
-        this.placeCalcKartLine2.setFromValues(0,0,(nodeDist*2));
-        this.placeCalcKartLine2.rotateY(null,angY);
-        this.placeCalcKartLine2.addPoint(entity.position);
-        
-            // finally run the line-to-line collision
-            // and get the distance to the collision point
-            
-        sx1=this.placeCalcPassLine2.x-this.placeCalcPassLine1.x;
-        sz1=this.placeCalcPassLine2.z-this.placeCalcPassLine1.z;
-        sx2=this.placeCalcKartLine2.x-entity.position.x;
-        sz2=this.placeCalcKartLine2.z-entity.position.z;
-
-        f=((-sx2*sz1)+(sx1*sz2));
-        if (f===0) return(-1);
-        
-        s=((-sz1*(this.placeCalcPassLine1.x-entity.position.x))+(sx1*(this.placeCalcPassLine1.z-entity.position.z)))/f;
-        t=((sx2*(this.placeCalcPassLine1.z-entity.position.z))-(sz2*(this.placeCalcPassLine1.x-entity.position.x)))/f;
-
-        if ((s>=0)&&(s<=1)&&(t>=0)&&(t<=1)) {
-            px=entity.position.x-(this.placeCalcPassLine1.x+(t*sx1));
-            pz=entity.position.z-(this.placeCalcPassLine1.z+(t*sz1));
-            return(Math.sqrt((px*px)+(pz*pz)));
-        }
-        
-        return(-1);
-    }
 
     calculatePlaces()
     {
-        let n,nodeDist,prevNodeDist,nextNodeDist;
-        let nodeIdx,prevNodeIdx,nextNodeIdx,spliceIdx,entity;
-        let entityList=this.core.game.map.entityList;
+        let n,entity,spliceIdx;
+        let entities=this.getEntityList();
         let placeList=[];
 
             // this is a bit complicated -- the path of travel
@@ -693,87 +624,27 @@ export default class KartBaseClass extends EntityClass
             // center of each kart.  all of that together gives
             // use the kart place
             
-        for (entity of entityList.entities) {
+        for (entity of entities) {
             if (!(entity instanceof KartBaseClass)) continue;
             
-                // we try three nodes, the one closest to the kart
-                // and the one before and after, -1 means we passed
-                // the travel line, take the closest node as the one
-                // we are heading two
-
-            nodeIdx=entity.findNearestPathNode(-1);
-            prevNodeIdx=(nodeIdx===entity.goalNodeIdx)?entity.endNodeIdx:(nodeIdx-1);
-            nextNodeIdx=(nodeIdx===entity.endNodeIdx)?entity.goalNodeIdx:(nodeIdx+1);
-    
-            nodeDist=this.collideEntityWithNodeLine(entity,nodeIdx);
-            prevNodeDist=this.collideEntityWithNodeLine(entity,prevNodeIdx);
-            nextNodeDist=this.collideEntityWithNodeLine(entity,nextNodeIdx);
-            
-            if ((prevNodeDist===-1) && (nodeDist===-1)) {
-                entity.placeNodeIdx=nextNodeIdx;
-                entity.placeNodeDistance=nextNodeDist;
-            }
-            else {
-                if (prevNodeDist===-1) {
-                    if (nodeDist<nextNodeDist) {
-                        entity.placeNodeIdx=nodeIdx;
-                        entity.placeNodeDistance=nodeDist;
-                    }
-                    else {
-                        entity.placeNodeIdx=nextNodeIdx;
-                        entity.placeNodeDistance=nextNodeDist;
-                    }
-                }
-                else {
-                    if (nodeDist<prevNodeDist) {
-                        entity.placeNodeIdx=nodeIdx;
-                        entity.placeNodeDistance=nodeDist;
-                    }
-                    else {
-                        entity.placeNodeIdx=prevNodeIdx;
-                        entity.placeNodeDistance=prevNodeDist;
-                    }
-                }
-            }
-            
-                // determine lap status
-                // we have to pass a midpoint before we can be
-                // before goal, and we have to be before goal
-                // before we can add up a lap
+                // get distance to next travelToPoint
+                // and node we are traveling to
+                // we do a special check for goal node, because that's
+                // the loop node and move it to endNodeIdx+1
                 
-            if (entity.placeNodeIdx===entity.midpointNodeIdx) {
-                entity.lapStatus=this.LAP_STATUS_PASSING_MIDPOINT;
-            }
-            else {
-                if (entity.placeNodeIdx===entity.endNodeIdx) {
-                    if (entity.lapStatus===this.LAP_STATUS_PASSING_MIDPOINT) entity.lapStatus=this.LAP_STATUS_BEFORE_GOAL;
-                }
-                else {
-                    if (entity.placeNodeIdx===entity.firstNodeIdx) {
-                        if (entity.lapStatus===this.LAP_STATUS_BEFORE_GOAL) {
-                            entity.lapStatus=this.LAP_STATUS_PASS_GOAL;
-                            entity.lap++;
-                        }
-                    }
-                }
-            }
-            
-                // if we are heading towards the goal (which is
-                // node 0) then we need to push the lap ahead one
-                // or else we end up in last place
-                
-            entity.placeLap=((entity.lapStatus===this.LAP_STATUS_BEFORE_GOAL) && (entity.placeNodeIdx===entity.goalNodeIdx))?(entity.lap+1):entity.lap;
+            entity.placeNodeDistance=entity.position.distance(entity.travelToPoint);
+            entity.placeNodeIdx=(entity.travelToNodeIdx===this.goalNodeIdx)?(this.endNodeIdx+1):entity.travelToNodeIdx;
 
                 // sort it
                 
             spliceIdx=-1;
             
             for (n=0;n!=placeList.length;n++) {
-                if (entity.placeLap<placeList[n].placeLap) {
+                if (entity.lap<placeList[n].lap) {
                     spliceIdx=n;
                     break;
                 }
-                if (entity.placeLap===placeList[n].placeLap) {
+                if (entity.lap===placeList[n].lap) {
                     if (entity.placeNodeIdx===placeList[n].placeNodeIdx) {
                         if (entity.placeNodeDistance>placeList[n].placeNodeDistance) {
                             spliceIdx=n;
@@ -799,7 +670,6 @@ export default class KartBaseClass extends EntityClass
             
         for (n=0;n!=placeList.length;n++) {
             placeList[n].place=((placeList.length-1)-n);
-            entity=placeList[n];
         }
     }
         

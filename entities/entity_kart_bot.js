@@ -47,8 +47,7 @@ export default class KartBotClass extends KartBaseClass
         
             // setup the path
             
-        this.trackOffsetSetup();
-        this.pathSetup(1);
+        this.pathSetup();
         
             // start scanning in middle
             
@@ -65,8 +64,6 @@ export default class KartBotClass extends KartBaseClass
         
     checkFire()
     {
-        return(false);
-        
             // is it time to fire?
         
         if (this.core.game.timestamp<this.nextFireTick) return(false);
@@ -102,7 +99,9 @@ export default class KartBotClass extends KartBaseClass
     run()
     {
         let turnAdd,ang,drifting,brake;
-        let burstEntity;
+        let entity;
+        
+            // run the kart base
         
         super.run();
 
@@ -110,27 +109,43 @@ export default class KartBotClass extends KartBaseClass
             
         if (this.core.game.freezeAI) return;
         
-        return;
-        
-            // run the kart base
-        
-        super.run();
-        
             // run the path
             
         this.pathRun();
         
             // turn towards the position
+            // unless we are spinning, don't turn
+            // then as it falls off the path
         
-        turnAdd=this.angle.getTurnYTowards(this.position.angleYTo(this.gotoPosition));
-        
-            // if there is a burst nearby, go for that
-        /*    
-        burstEntity=this.findClosestWithMaxAngle(this.position,this.angle,'pickup_burst',null,30);
-        if (burstEntity!==null) {
-            if (burstEntity.position.distance(this.position)<90000) turnAdd=this.angleYToEntity(burstEntity)-this.angle.y;
+        if (this.spinOutCount===0) {
+            turnAdd=this.angle.getTurnYTowards(this.position.angleYTo(this.travelToPoint));
         }
-        */
+        else {
+            turnAdd=0;
+        }
+        
+            // if there is a star, or bowling ball,
+            // or finally a burst, head towards that
+            
+        if ((this.bounceCount===0) && (this.reflectCount===0) && (this.spinOutCount===0)) {
+            entity=this.findClosestWithMaxAngle(this.position,this.angle,'pickup_star',null,30,80000);
+            if (entity!==null) {
+                turnAdd=this.angleYToEntity(entity)-this.angle.y;
+            }
+            else {
+                entity=this.findClosestWithMaxAngle(this.position,this.angle,'pickup_bowling',null,30,80000);
+                if (entity!==null) {
+                    turnAdd=this.angleYToEntity(entity)-this.angle.y;
+                }
+                else {
+                    entity=this.findClosestWithMaxAngle(this.position,this.angle,'pickup_burst',null,30,80000);
+                    if (entity!==null) {
+                        turnAdd=this.angleYToEntity(entity)-this.angle.y;
+                    }
+                } 
+            }
+        }
+        
             // and figure out if we need to drift or break
         
         ang=Math.abs(turnAdd);
