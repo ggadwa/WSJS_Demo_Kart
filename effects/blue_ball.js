@@ -39,15 +39,13 @@ export default class BlueBallClass extends EffectClass
         this.startSound={"name":"explosion","rate":1.0,"randomRateAdd":-0.4,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false};
     }
     
-    initialize()
+    ready()
     {
-        if (!super.initialize()) return(false);
+        super.ready();
         
         this.playSound(this.startSound);
         this.shakeCamera(100000,40,2000);
         this.damageForRadius(60000,1);
-        
-        return(true);
     }
 
 }
