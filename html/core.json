@@ -19,18 +19,6 @@
             "multiplayerDefaultCharacter":null,
             "multiplayerMessageText":null,
             "multiplayerMessageWaitTick":0,
-            "startActions":
-                [
-                    {"action":"sequence","name":"ready_set_go"}
-                ],
-            "wonActions":
-                [
-                    {"action":"sequence","name":"won"}
-                ],
-            "lostActions":
-                [
-                    {"action":"sequence","name":"lost"}
-                ],
             "touchStickSize":256,
             "touchButtonSize":48,
             "touchMenuPosition":[0.01,0.92],
@@ -60,15 +48,5 @@
         },
     "characters":
         [
-        ],
-    "entities":
-        [
-        ],
-    "effects":
-        [
-        ],
-    "sequences":
-        [
-            "ready_set_go","won","lost"
         ]
 }

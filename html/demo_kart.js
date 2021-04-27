@@ -13,70 +13,67 @@ import ProjectileBowlingBallClass from '../entities/projectile_bowling_ball.js';
 
 export default class DemoClass extends ProjectClass
 {
-    mapModels(mapName,singlePlayer)
+    initialize()
     {
-        return(['bowling_ball','retro_car_blue','retro_car_red','rocket','star']);
-    }
-    
-    mapBitmaps(mapName,singlePlayer)
-    {
-        return(['textures/particle_smoke.png','textures/particle_blob.png','textures/paint_stroke.png','textures/particle_glow.png']);
-    }
-    
-    mapSounds(mapName,singlePlayer)
-    {
-        return(['bowling_ball_fire','burst','crash','engine','explosion','pickup','skid','start_tone']);
-    }
-    
-    mapCube(mapName,cubeName)
-    {
-        return(null);
-    }
-
-    mapEffect(mapName,effectName)
-    {
-        switch (effectName) {
-            case 'blue_ball':
-                return(BlueBallClass);
-            case 'exhaust':
-                return(ExhaustClass);
-            case 'spotlight':
-                return(SpotlightClass);
-            case 'tire_smoke':
-                return(TireSmokeClass);
-        }
+        super.initialize();
         
-        return(null);
+            // project effects
+            
+        this.addEffectClass('blue_ball',BlueBallClass);
+        this.addEffectClass('exhaust',ExhaustClass);
+        this.addEffectClass('spotlight',SpotlightClass);
+        this.addEffectClass('tire_smoke',TireSmokeClass);
+        
+            // project entities
+    
+        this.addEntityClass('kart_player',KartPlayerClass);
+        this.addEntityClass('kart_bot',KartBotClass);
+        this.addEntityClass('pickup_bowling_ball',PickupBowlingBallClass);
+        this.addEntityClass('pickup_star',PickupStarClass);
+        this.addEntityClass('pickup_burst',PickupBurstClass);
+        this.addEntityClass('weapon_bowling_ball',WeaponBowlingBallClass);
+        this.addEntityClass('projectile_bowling_ball',ProjectileBowlingBallClass);
+        
+            // models
+            
+        this.addCommonModel('retro_car_blue');
+        this.addCommonModel('retro_car_red');
+        this.addCommonModel('bowling_ball');
+        this.addCommonModel('rocket');
+        this.addCommonModel('star');
+        
+            // bitmaps
+            
+        this.addCommonBitmap('textures/particle_smoke.png');
+        this.addCommonBitmap('textures/particle_blob.png');
+        this.addCommonBitmap('textures/paint_stroke.png');
+        this.addCommonBitmap('textures/particle_glow.png');
+        
+           // sounds
+           
+        this.addCommonSound('bowling_ball_fire');
+        this.addCommonSound('burst');
+        this.addCommonSound('crash');
+        this.addCommonSound('engine');
+        this.addCommonSound('explosion');
+        this.addCommonSound('pickup');
+        this.addCommonSound('skid');
+        this.addCommonSound('start_tone');
+        
+            // sequences
+            
+        this.addSequence('ready_set_go');
+        this.addSequence('won');
+        this.addSequence('lost');
     }
 
-    mapEntity(mapName,entityName)
-    {
-        switch (entityName) {
-            case 'kart_player':
-                return(KartPlayerClass);
-            case 'kart_bot':
-                return(KartBotClass);
-            case 'pickup_bowling_ball':
-                return(PickupBowlingBallClass);
-            case 'pickup_star':
-                return(PickupStarClass);
-            case 'pickup_burst':
-                return(PickupBurstClass);
-            case 'weapon_bowling_ball':
-                return(WeaponBowlingBallClass);
-            case 'projectile_bowling_ball':
-                return(ProjectileBowlingBallClass);
-        }
-
-        return(null);
-    }
+        //
+        // overrides
+        //
     
     mapStartup(mapName)
     {
-        switch (mapName) {
-            case 'circuit_race':
-                this.buildPerpendicularLineForLoop('goal','end',100000);     // enough to reach edge of road/area
-                break;
-        }
+        this.buildPerpendicularLineForLoop('goal','end',100000);     // enough to reach edge of road/area
+        this.startSequence('ready_set_go');
     }
 }

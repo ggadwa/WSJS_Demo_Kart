@@ -8,9 +8,9 @@ import KartBaseClass from './entity_kart_base.js';
 
 export default class KartPlayerClass extends KartBaseClass
 {
-    constructor(core,name,jsonName,position,angle,data,mapSpawn,spawnedBy,heldBy,show)
+    constructor(core,name,position,angle,data,mapSpawn,spawnedBy,heldBy,show)
     {
-        super(core,name,null,position,angle,data,mapSpawn,spawnedBy,heldBy,show);
+        super(core,name,position,angle,data,mapSpawn,spawnedBy,heldBy,show);
         
         this.isPlayer=true;
         
@@ -151,10 +151,10 @@ export default class KartPlayerClass extends KartBaseClass
                 // trigger the win/loss
                 
             if (this.place===0) {
-                this.core.game.won(this);
+                this.startSequence('won');
             }
             else {
-                this.core.game.lost(this);
+                this.startSequence('lost');
             }
             
                 // start running automatically
