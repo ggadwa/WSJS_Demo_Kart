@@ -45,8 +45,5 @@
                 [
                     {"id":"speed","backgroundBitmap":"textures/speed_background.png","foregroundBitmap":"textures/speed_foreground.png","needleBitmap":"textures/speed_needle.png","width":256,"height":256,"positionMode":"bottomRight","positionOffset":{"x":-256,"y":-256},"show":true}
                 ]
-        },
-    "characters":
-        [
-        ]
+        }
 }

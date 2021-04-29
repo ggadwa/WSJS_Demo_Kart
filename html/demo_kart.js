@@ -1,4 +1,6 @@
 import ProjectClass from '../../../code/main/project.js';
+import PointClass from '../../../code/utility/point.js';
+import ColorClass from '../../../code/utility/color.js';
 import BlueBallClass from '../effects/blue_ball.js';
 import ExhaustClass from '../effects/exhaust.js';
 import SpotlightClass from '../effects/spotlight.js';
@@ -65,6 +67,18 @@ export default class DemoClass extends ProjectClass
         this.addSequence('ready_set_go');
         this.addSequence('won');
         this.addSequence('lost');
+        
+            // interface
+            
+        this.addInterfaceText('place','',this.POSITION_TOP_LEFT,new PointClass(70,100),80,this.TEXT_ALIGN_CENTER,new ColorClass(1.0,1.0,0.0),1.0,true);
+        this.addInterfaceText('lap','',this.POSITION_TOP_LEFT,new PointClass(70,120),30,this.TEXT_ALIGN_CENTER,new ColorClass(1.0,1.0,0.0),1.0,true);
+        
+        this.addInterfaceElement('lap_background','textures/lap_background.png',128,128,this.POSITION_TOP_LEFT,new PointClass(5,5),new ColorClass(1.0,1.0,1.0),0.5,true);
+        
+        this.addInterfaceCount('stars','textures/star.png',10,32,32,this.POSITION_TOP_LEFT,new PointClass(130,5),new PointClass(32,0),new ColorClass(1.0,1.0,1.0),1.0,new ColorClass(0.8,0.8,0.8),0.7,true);
+        this.addInterfaceCount('bowling_balls','textures/bowling_ball.png',3,32,32,this.POSITION_TOP_LEFT,new PointClass(130,40),new PointClass(32,0),new ColorClass(1.0,1.0,1.0),1.0,new ColorClass(1.0,1.0,1.0),0.0,true);
+        
+        this.addInterfaceDials('speed','textures/speed_background.png','textures/speed_foreground.png','textures/speed_needle.png',256,256,this.POSITION_BOTTOM_RIGHT,new PointClass(-256,-256),true);
     }
 
         //
