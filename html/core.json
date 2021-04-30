@@ -24,26 +24,5 @@
             "touchMenuPosition":[0.01,0.92],
             "touchShowLeftStick":false,
             "touchShowRightStick":true
-        },
-    "interface":
-        {
-            "elements":
-                [
-                    {"id":"lap_background","bitmap":"textures/lap_background.png","width":128,"height":128,"positionMode":"topLeft","positionOffset":{"x":5,"y":5},"color":{"r":1,"g":1,"b":1},"alpha":0.5,"show":true}
-                ],
-            "texts":
-                [
-                    {"id":"place","text":"1","positionMode":"topLeft","positionOffset":{"x":70,"y":100},"textSize":80,"textAlign":"center","color":{"r":1,"g":1,"b":0},"alpha":1,"show":true},
-                    {"id":"lap","text":"0/3","positionMode":"topLeft","positionOffset":{"x":70,"y":120},"textSize":30,"textAlign":"center","color":{"r":1,"g":1,"b":0},"alpha":1,"show":true}
-                ],
-            "counts":
-                [
-                    {"id":"stars","bitmap":"textures/star.png","count":10,"width":32,"height":32,"positionMode":"topLeft","positionOffset":{"x":130,"y":5},"addOffset":{"x":32,"y":0},"onColor":{"r":1,"g":1,"b":1},"onAlpha":1,"offColor":{"r":0.8,"g":0.8,"b":0.8},"offAlpha":0.7,"show":true},
-                    {"id":"bowling_balls","bitmap":"textures/bowling_ball.png","count":3,"width":32,"height":32,"positionMode":"topLeft","positionOffset":{"x":130,"y":40},"addOffset":{"x":32,"y":0},"onColor":{"r":1,"g":1,"b":1},"onAlpha":1,"offColor":{"r":1,"g":1,"b":1},"offAlpha":0,"show":true}
-                ],
-            "dials":
-                [
-                    {"id":"speed","backgroundBitmap":"textures/speed_background.png","foregroundBitmap":"textures/speed_foreground.png","needleBitmap":"textures/speed_needle.png","width":256,"height":256,"positionMode":"bottomRight","positionOffset":{"x":-256,"y":-256},"show":true}
-                ]
         }
 }
