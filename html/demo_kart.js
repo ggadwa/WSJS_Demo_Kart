@@ -83,7 +83,7 @@ export default class DemoClass extends ProjectClass
             // title setup
             
         this.setTitleConfig('Arial','click','select');
-        this.setTitleMenu(80,82,new ColorClass(0.0,1.0,0.0),new ColorClass(1.0,1.0,0.0),this.MENU_X_ALIGN_MIDDLE,this.MENU_Y_ALIGN_MIDDLE);
+        this.setTitleMenu(80,82,new ColorClass(0.0,1.0,0.0),new ColorClass(1.0,1.0,0.0),this.MENU_X_ALIGN_CENTER,this.MENU_Y_ALIGN_CENTER);
         this.setTitlePlayButton('Race',true);
         this.setTitleMultiplayerButton('',false);
         this.setTitleSetupButton('Setup',true);
