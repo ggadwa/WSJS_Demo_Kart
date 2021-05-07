@@ -2,27 +2,5 @@
     "developer":true,
     "startMap":"circuit_race",
     "multiplayerGames":null,
-    "multiplayerMaps":null,
-    "title":
-        {
-            "font":"Arial",
-            "clickSound":"click",
-            "selectSound":"select",
-            "menu":{"textSize":80,"highlightTextSize":82,"color":{"r":0,"g":1,"b":0},"highlightColor":{"r":1,"g":1,"b":0},"alignX":"middle","alignY":"middle"},
-            "playButton":{"title":"Race","show":true},
-            "multiplayerButton":{"title":"","show":false},
-            "setupButton":{"title":"Setup","show":true},
-            "quitButton":{"title":"Quit","show":true}
-        },
-    "config":
-        {
-            "multiplayerDefaultCharacter":null,
-            "multiplayerMessageText":null,
-            "multiplayerMessageWaitTick":0,
-            "touchStickSize":256,
-            "touchButtonSize":48,
-            "touchMenuPosition":[0.01,0.92],
-            "touchShowLeftStick":false,
-            "touchShowRightStick":true
-        }
+    "multiplayerMaps":null
 }
