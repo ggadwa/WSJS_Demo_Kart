@@ -97,6 +97,13 @@ export default class DemoClass extends ProjectClass
             
         this.setMultiplayerUI(null,null,0);
 
+            // starting map
+            
+        this.setStartMap('circuit_race');
+        
+            // developer setup
+            
+        this.setDeveloper(true);
     }
 
         //
