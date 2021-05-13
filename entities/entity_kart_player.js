@@ -1,5 +1,7 @@
 import PointClass from '../../../code/utility/point.js';
 import LineClass from '../../../code/utility/line.js';
+import AnimationDefClass from '../../../code/model/animation_def.js';
+import SoundDefClass from '../../../code/sound/sound_def.js';
 import KartBaseClass from './entity_kart_base.js';
 
 //
@@ -29,6 +31,7 @@ export default class KartPlayerClass extends KartBaseClass
             // variables
 
         this.raceFinished=false;
+        this.fasterMusic=false;
         
         Object.seal(this);
     }
@@ -61,13 +64,13 @@ export default class KartPlayerClass extends KartBaseClass
         let x,speed,turnAdd,ang,fire;
         let forward,reverse,drifting,brake,jump;
         let textLap;
-        let setup=this.core.setup;
+        let setup=this.getSetup();
         
         super.run();
         
             // player freeze
             
-        if (this.core.game.freezePlayer) return;
+        if (this.inFreezePlayer()) return;
         
             // we run the path for the player, just
             // let the player control the turns, this
@@ -83,6 +86,14 @@ export default class KartPlayerClass extends KartBaseClass
             
             this.moveKart(turnAdd,true,false,(ang>=60),(ang>=90),false,false);
             return;
+        }
+        
+            // if we've gone into the final lap, then
+            // raise the music rate
+            
+        if ((this.lap===2) && (!this.fasterMusic)) {
+            this.fasterMusic=true;
+            this.musicSetRate(1.05);
         }
         
             // keys

@@ -1,6 +1,8 @@
 import PointClass from '../../../code/utility/point.js';
 import BoundClass from '../../../code/utility/bound.js';
 import EntityClass from '../../../code/game/entity.js';
+import AnimationDefClass from '../../../code/model/animation_def.js';
+import SoundDefClass from '../../../code/sound/sound_def.js';
 
 export default class WeaponBowlingBallClass extends EntityClass
 {
@@ -10,7 +12,7 @@ export default class WeaponBowlingBallClass extends EntityClass
         
         this.ammoCount=0;
         
-        this.fireSound={"name":"bowling_ball_fire","rate":1.0,"randomRateAdd":0,"distance":10000,"loopStart":0,"loopEnd":0,"loop":false};
+        this.fireSound=new SoundDefClass('bowling_ball_fire',1.0,0,10000,0,0,false);
         
         this.lastFireTimestamp=0;
             
@@ -47,11 +49,12 @@ export default class WeaponBowlingBallClass extends EntityClass
     {
         let projEntity;
         let parentEntity=this.heldBy;
+        let timestamp=this.getTimestamp();
         
         if (this.ammoCount===0) return(false);
             
-        if ((this.lastFireTimestamp+1000)>this.core.game.timestamp) return(false);
-        this.lastFireTimestamp=this.core.game.timestamp;
+        if ((this.lastFireTimestamp+1000)>timestamp) return(false);
+        this.lastFireTimestamp=timestamp;
         
             // ammo
             
@@ -88,7 +91,7 @@ export default class WeaponBowlingBallClass extends EntityClass
         
             // update any UI if player
             
-        if (this.heldBy===this.core.game.map.entityList.getPlayer()) {
+        if (this.heldBy===this.getPlayer()) {
             this.setCount('bowling_balls',this.ammoCount);
         }
     }

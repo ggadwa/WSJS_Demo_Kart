@@ -1,6 +1,8 @@
 import PointClass from '../../../code/utility/point.js';
 import LineClass from '../../../code/utility/line.js';
 import EntityClass from '../../../code/game/entity.js';
+import AnimationDefClass from '../../../code/model/animation_def.js';
+import SoundDefClass from '../../../code/sound/sound_def.js';
 
 //
 // kart base module
@@ -93,19 +95,19 @@ export default class KartBaseClass extends EntityClass
         
             // animations
             
-        this.idleAnimation={"startFrame":175,"endFrame":275,"actionFrame":0,"meshes":null};
-        this.driveAnimation={"startFrame":380,"endFrame":400,"actionFrame":0,"meshes":null};
-        this.turnLeftAnimation={"startFrame":405,"endFrame":425,"actionFrame":0,"meshes":null};
-        this.turnRightAnimation={"startFrame":435,"endFrame":455,"actionFrame":0,"meshes":null};
-        this.spinOutAnimation={"startFrame":275,"endFrame":375,"actionFrame":0,"meshes":null};
+        this.idleAnimation=new AnimationDefClass(175,275,0);
+        this.driveAnimation=new AnimationDefClass(380,400,0);
+        this.turnLeftAnimation=new AnimationDefClass(405,425,0);
+        this.turnRightAnimation=new AnimationDefClass(435,455,0);
+        this.spinOutAnimation=new AnimationDefClass(275,375,0);
         
             // sounds
             
-        this.engineSound={"name":"engine","rate":0.5,"randomRateAdd":0,"distance":800000,"loopStart":0,"loopEnd":3.0,"loop":true};
-        this.skidSound={"name":"skid","rate":1.0,"randomRateAdd":0,"distance":80000,"loopStart":0,"loopEnd":0,"loop":false};
-        this.burstSound={"name":"burst","rate":1.0,"randomRateAdd":0,"distance":50000,"loopStart":0,"loopEnd":0,"loop":false};
-        this.crashKartSound={"name":"crash","rate":1.0,"randomRateAdd":0.2,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false};
-        this.crashWallSound={"name":"crash","rate":0.8,"randomRateAdd":0.2,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false};
+        this.engineSound=new SoundDefClass('engine',0.5,0,800000,0,3.0,true);
+        this.skidSound=new SoundDefClass('skid',1.0,0,80000,0,0,false);
+        this.burstSound=new SoundDefClass('burst',1.0,0,50000,0,0,false);
+        this.crashKartSound=new SoundDefClass('crash',1.0,0.2,100000,0,0,false);
+        this.crashWallSound=new SoundDefClass('crash',0.8,0.2,100000,0,0,false);
         
             // remember the original angle
             // so we can restart players into bots
@@ -172,7 +174,7 @@ export default class KartBaseClass extends EntityClass
         
         this.lap=-1;            // we are currently starting before the goal
         
-        this.lastDrawTick=this.core.game.timestamp;
+        this.lastDrawTick=this.getTimestamp();
         this.rigidGotoAngle.setFromValues(0,0,0);
         
             // star count
@@ -243,7 +245,7 @@ export default class KartBaseClass extends EntityClass
     
     addBurst()
     {
-        this.burstEndTimestamp=this.core.game.timestamp+2500;
+        this.burstEndTimestamp=this.getTimestamp()+2500;
         
         this.playSound(this.burstSound);
     }
@@ -266,7 +268,7 @@ export default class KartBaseClass extends EntityClass
         this.inDrift=false;
 
         if (this.lastDriftSoundPlayIdx!==-1) {
-            this.core.audio.soundStop(this.lastDriftSoundPlayIdx);
+            this.stopSound(this.lastDriftSoundPlayIdx);
             this.lastDriftSoundPlayIdx=-1;
         }
     }
@@ -422,7 +424,7 @@ export default class KartBaseClass extends EntityClass
             moveReverse=false;
             drifting=false;
             
-            this.spinOutCount-=this.spinOutSpeed;
+            this.spinOutCount-=(this.burstEndTimestamp===0)?this.spinOutSpeed:(this.spinOutSpeed*2);    // bursting gets out of spins twice as fast
             if (this.spinOutCount<=0) this.spinOutCount=0;
         }
         
@@ -464,7 +466,7 @@ export default class KartBaseClass extends EntityClass
            
         if (jump) {
             if (this.isStandingOnFloor()) {
-                this.gravity=this.core.game.map.gravityMinValue;
+                this.gravity=this.getMapGravityMinValue();
                 this.movement.y=this.jumpHeight;
             }
         }
@@ -487,7 +489,7 @@ export default class KartBaseClass extends EntityClass
                 if (this.isStandingOnFloor()) {
                     speed=this.forwardMaxSpeed+(10*this.starCount);
                     if (this.burstEndTimestamp!==0) {
-                        if (this.burstEndTimestamp<this.core.game.timestamp) {
+                        if (this.burstEndTimestamp<this.getTimestamp()) {
                             this.burstEndTimestamp=0;
                         }
                         else {
@@ -605,7 +607,7 @@ export default class KartBaseClass extends EntityClass
             }
         }
         
-        this.core.audio.soundChangeRate(this.engineSoundPlayIdx,rate);
+        this.changeSoundRate(this.engineSoundPlayIdx,rate);
     }
     
         //
@@ -680,7 +682,7 @@ export default class KartBaseClass extends EntityClass
     drawSetup()
     {
         let speed;
-        let timestamp=this.core.game.timestamp;
+        let timestamp=this.getTimestamp();
         
             // physics are guarenteed to be run 60fps, but
             // drawing could be slower so only do the rigid body stuff here

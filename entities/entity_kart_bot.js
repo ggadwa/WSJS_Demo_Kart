@@ -1,4 +1,6 @@
 import PointClass from '../../../code/utility/point.js';
+import AnimationDefClass from '../../../code/model/animation_def.js';
+import SoundDefClass from '../../../code/sound/sound_def.js';
 import KartBaseClass from './entity_kart_base.js';
 
 //
@@ -55,7 +57,7 @@ export default class KartBotClass extends KartBaseClass
         
             // can fire at any time
             
-        this.nextFireTick=this.core.game.timestamp;
+        this.nextFireTick=this.getTimestamp();
     }
     
         //
@@ -64,9 +66,11 @@ export default class KartBotClass extends KartBaseClass
         
     checkFire()
     {
+        let timestamp=this.getTimestamp();
+        
             // is it time to fire?
         
-        if (this.core.game.timestamp<this.nextFireTick) return(false);
+        if (timestamp<this.nextFireTick) return(false);
         
             // ray trace for entities
             // we do one look angle per tick
@@ -88,7 +92,7 @@ export default class KartBotClass extends KartBaseClass
         if (!(this.hitEntity instanceof KartBaseClass)) return(false);
         if (this.hitEntity.position.distance(this.position)<15000) return(false);
         
-        this.nextFireTick=this.core.game.timestamp+5000;        // can only fire 5 seconds after previous fire
+        this.nextFireTick=timestamp+5000;        // can only fire 5 seconds after previous fire
         return(true);
     }
     
@@ -107,7 +111,7 @@ export default class KartBotClass extends KartBaseClass
 
             // skip if AI is frozen
             
-        if (this.core.game.freezeAI) return;
+        if (this.inFreezeAI()) return;
         
             // run the path
             

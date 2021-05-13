@@ -1,6 +1,7 @@
 import PointClass from '../../../code/utility/point.js';
 import ColorClass from '../../../code/utility/color.js';
 import EffectClass from '../../../code/game/effect.js';
+import SoundDefClass from '../../../code/sound/sound_def.js';
 
 export default class BlueBallClass extends EffectClass
 {
@@ -33,10 +34,10 @@ export default class BlueBallClass extends EffectClass
         this.addGlobe('textures/paint_stroke.png',this.DRAW_MODE_TRANSPARENT)
                 .addGlobeFrame(0,10,0.0,0,new ColorClass(0.3,0.3,1.0),0.1)
                 .addGlobeFrame(250,100000,1.0,0,new ColorClass(0.0,0.0,1.0),0.4)
-                .addGlobeFrame(1300,1000,1.0,0,new ColorClass(0.1,0.1,1.0),0.3)
-                .addGlobeFrame(1500,10,1.5,0,new ColorClass(0.3,0.3,1.0),0.0);
+                .addGlobeFrame(1300,100000,1.0,0,new ColorClass(0.1,0.1,1.0),0.05)
+                .addGlobeFrame(1500,200000,1.5,0,new ColorClass(0.3,0.3,1.0),0.0);
 
-        this.startSound={"name":"explosion","rate":1.0,"randomRateAdd":-0.4,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false};
+        this.startSound=new SoundDefClass('explosion',1.0,-0.4,100000,0,0,false);
     }
     
     ready()

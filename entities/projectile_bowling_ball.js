@@ -1,5 +1,7 @@
 import PointClass from '../../../code/utility/point.js';
 import EntityClass from '../../../code/game/entity.js';
+import AnimationDefClass from '../../../code/model/animation_def.js';
+import SoundDefClass from '../../../code/sound/sound_def.js';
 
 export default class ProjectileBowlingBallClass extends EntityClass
 {
@@ -35,7 +37,7 @@ export default class ProjectileBowlingBallClass extends EntityClass
         
         this.nextTrailTick=0;
         
-        this.reflectSound={"name":"crash","rate":1.5,"randomRateAdd":0.3,"distance":100000,"loopStart":0,"loopEnd":0,"loop":false};
+        this.reflectSound=new SoundDefClass('crash',1.5,0.3,100000,0,0,false);
         
             // pre-allocations
 
@@ -49,9 +51,11 @@ export default class ProjectileBowlingBallClass extends EntityClass
     
     ready()
     {
+        let timestamp=this.getTimestamp();
+        
         super.ready();
         
-        this.lifeTimestamp=this.core.game.timestamp+4000;
+        this.lifeTimestamp=timestamp+4000;
         this.stopped=false;
         
         this.motion.setFromValues(0,0,2200);
@@ -59,7 +63,7 @@ export default class ProjectileBowlingBallClass extends EntityClass
         
         this.trackMotion.setFromValues(0,0,0);
         
-        this.nextTrailTick=this.core.game.timestamp;
+        this.nextTrailTick=timestamp;
     }
     
     finish()
@@ -76,19 +80,20 @@ export default class ProjectileBowlingBallClass extends EntityClass
     run()
     {
         let trackEntity;
+        let timestamp=this.getTimestamp();
         
         super.run();
         
             // are we over our life time
  
-        if (this.core.game.timestamp>this.lifeTimestamp) {
+        if (timestamp>this.lifeTimestamp) {
             this.finish();
             return;
         }
         
             // trails
 
-        if (this.core.game.timestamp>=this.nextTrailTick) {
+        if (timestamp>=this.nextTrailTick) {
             this.nextTrailTick+=20;
             this.addEffect(this,'exhaust',this.position,null,true);
         }
