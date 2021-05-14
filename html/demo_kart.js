@@ -19,6 +19,10 @@ export default class DemoClass extends ProjectClass
     {
         super.initialize();
         
+            // version
+            
+        this.setVersion(0.8);
+        
             // project effects
             
         this.addEffectClass('blue_ball',BlueBallClass);
