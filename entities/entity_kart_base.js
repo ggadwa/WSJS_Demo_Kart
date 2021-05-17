@@ -193,7 +193,7 @@ export default class KartBaseClass extends EntityClass
         
             // get a random place from the spots
             
-        spot=this.core.game.map.spotList.getRandomUnusedSpotAndMark();
+        spot=this.getRandomUnusedSpotAndMark();
         this.position.setFromPoint(spot.position);
 
             // idle animation

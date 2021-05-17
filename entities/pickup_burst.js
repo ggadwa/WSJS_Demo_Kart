@@ -49,25 +49,10 @@ export default class PickupBurstClass extends EntityClass
     {
         super.ready();
         
-        this.setRandomPosition();
+        this.moveToRandomNode(this.randomPositionAdd,this.randomPositionOffset);
         
         this.reappearTick=0;
         this.originalY=this.position.y;
-    }
-    
-    setRandomPosition()
-    {
-        let node;
-        let nodes=this.core.game.map.path.nodes;
-        
-        node=nodes[Math.trunc(nodes.length*Math.random())];
-        
-        this.position.setFromPoint(node.position);
-        this.position.addPoint(this.randomPositionAdd);
-        
-        this.position.x+=(((Math.random()*2.0)-1.0)*this.randomPositionOffset.x);
-        this.position.y+=(((Math.random()*2.0)-1.0)*this.randomPositionOffset.y);
-        this.position.z+=(((Math.random()*2.0)-1.0)*this.randomPositionOffset.z);
     }
     
     run()
@@ -92,7 +77,7 @@ export default class PickupBurstClass extends EntityClass
         this.touchEntity.playSound(this.pickupSound);
         
         this.touchEntity=null;
-        this.setRandomPosition();
+        this.moveToRandomNode(this.randomPositionAdd,this.randomPositionOffset);
         this.originalY=this.position.y;     // need to reset floating position
     }
     
